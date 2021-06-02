@@ -25,6 +25,8 @@ https://github.com/Ishii-Kaho/pasa_navi/files/6583752/pasa_navi_ER_Diagram.pdf
 https://docs.google.com/spreadsheets/d/1SGmighgPmEyAyPBWd1ARfMvQnMYuu3Mm/edit#gid=649748856
 テーブル定義書
 https://docs.google.com/spreadsheets/d/1RtLvI__vfRojsgNMJdFcjhcEEn0EQV5q/edit#gid=2144300915
+ワイヤーフレーム
+https://github.com/Ishii-Kaho/pasa_navi/files/6583808/PASA.6.1.22.50.15.pdf
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1yhtVm4WZ75Ok3VhHoOTwHmUShDxm48FJjPhp-UXpB5k/edit#gid=626424993
