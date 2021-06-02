@@ -20,12 +20,19 @@ PA/SAの清潔度や混雑度の評価などを確認することができる。
 
 ## 設計書
 ER図
+
 https://github.com/Ishii-Kaho/pasa_navi/files/6583752/pasa_navi_ER_Diagram.pdf
+
 アプリケーション詳細設計書
+
 https://docs.google.com/spreadsheets/d/1SGmighgPmEyAyPBWd1ARfMvQnMYuu3Mm/edit#gid=649748856
+
 テーブル定義書
+
 https://docs.google.com/spreadsheets/d/1RtLvI__vfRojsgNMJdFcjhcEEn0EQV5q/edit#gid=2144300915
+
 ワイヤーフレーム
+
 https://github.com/Ishii-Kaho/pasa_navi/files/6583808/PASA.6.1.22.50.15.pdf
 
 ## チャレンジ要素一覧
