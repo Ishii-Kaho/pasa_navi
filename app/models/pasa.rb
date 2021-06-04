@@ -1,0 +1,2 @@
+class Pasa < ApplicationRecord
+end
