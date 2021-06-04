@@ -1,3 +1,31 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.sign-up-in-head{
+  width: auto;
+  height: 300px;
+  background-image: image-url("signup.png");
+  background-size: cover;
+}
+
+.sign-up-in-field{
+  background-color: #FFFFFF;
+  width: 500px;
+  text-align: center;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.field{
+  margin: 20px;
+}
+
+.actions{
+  margin: 10px;
+}
+
+.title{
+  margin: 20px;
+}
