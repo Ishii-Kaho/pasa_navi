@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(version: 2021_06_04_034050) do
   end
 
   create_table "pasas", force: :cascade do |t|
-    t.string "facility"
-    t.string "prefecture"
+    t.integer "facility", default: 0, null: false
+    t.integer "prefecture", default: 0, null: false
     t.string "visit_weekday"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -49,14 +49,16 @@ ActiveRecord::Schema.define(version: 2021_06_04_034050) do
     t.integer "user_id"
     t.integer "pasa_id"
     t.integer "genre_id"
-    t.string "prefecture"
-    t.string "highway_name"
+    t.integer "prefecture", default: 0, null: false
+    t.integer "highway_name", default: 0, null: false
     t.integer "cleanliness"
     t.integer "congestion"
     t.integer "satisfaction"
     t.datetime "visit_time"
     t.string "visit_weekday"
     t.string "image_id"
+    t.integer "facility", default: 0, null: false
+    t.string "title"
     t.text "opinion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

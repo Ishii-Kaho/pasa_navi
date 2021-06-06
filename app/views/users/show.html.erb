@@ -3,9 +3,7 @@
 
   <h2>マイページ</h2>
 
-  <div class="col-md-3">
-
-
+  <div class="col-lg-3">
     <div class="profile-container">
      <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", size:'40x40' %>
 
@@ -22,8 +20,20 @@
           <p>メールアドレス</p>
           <h3><%= @user.email %></h3>
         </div>
-      </div>
-      <div class="user-edit-btn">
-        <%= link_to edit_user_path(@user.id), class: 'btn btn-block btn btn-outline-secondary' do %><i class="fas fa-user-cog" aria-hidden="true"></i><% end %>
+        <div class="user-edit-btn">
+          <%= link_to edit_user_path(@user.id), class: 'btn btn-block btn btn-outline-secondary' do %><i class="fas fa-user-cog" aria-hidden="true"></i><% end %>
+        </div>
       </div>
     </div>
+  </div>
+
+  <div class="col-lg-9">
+    <% @posts.each do |post| %>
+      <%= link_to post.title, post_path(post.id) %>
+      <%= post.image %>
+      <%= post.opinion %>
+      <%= post.visit_time %>
+    <% end %>
+  </div>
+
+
