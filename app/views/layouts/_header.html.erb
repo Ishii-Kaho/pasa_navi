@@ -7,9 +7,10 @@
           <ul>
             <li><i class="fas fa-list-alt"></i><%= link_to "投稿一覧", posts_path %></li>
             <li><i class="fas fa-store-alt"></i><%= link_to "pasa一覧", pasas_path %></li>
-            <li><i class="fas fa-user-alt"></i><%= link_to "マイページ", pasas_path %></li>
+            <li><i class="fas fa-user-alt"></i><%= link_to "マイページ", user_path(current_user.id) %></li>
             <li><i class="fas fa-sign-out-alt"></i><%= link_to "ログアウト", destroy_user_session_path %></li>
           </ul>
+
 
         <% else %>
           <ul>
@@ -23,3 +24,7 @@
     </div>
   </nav>
 </header>
+<% if user_signed_in? %>
+  <%= link_to new_post_path, class: "new-post" do %><i class="fas fa-pen-nib"></i>投稿を作成する<% end %>
+<% else %>
+<% end %>

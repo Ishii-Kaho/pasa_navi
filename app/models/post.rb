@@ -4,4 +4,5 @@ class Post < ApplicationRecord
   belongs_to :user
   belongs_to :pasa
   belongs_to :genre
+  attachment :image
 end
