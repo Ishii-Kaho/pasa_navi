@@ -80,7 +80,13 @@
         <h6 class="post-opinion">投稿内容</h6>
         <%= f.text_area :opinion %>
       </div>
-        <%= f.submit 'Create Book', class: "btn btn- btn btn-success" %>
+
+      <div class="form-group">
+        <h6 class="visit_time"></h6>
+        <%= f.date_field :visit_time %>
+      </div>
+
+        <%= f.submit '投稿', class: "btn btn- btn btn-success" %>
     <% end %>
 
   </div>
