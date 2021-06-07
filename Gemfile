@@ -69,6 +69,9 @@ gem 'font-awesome-sass', '~> 5.13'
 gem 'refile', require: 'refile/rails', github: 'manfe/refile'
 gem 'refile-mini_magick'
 gem 'enum_help'
+gem 'rubocop', require:false
+gem 'rubocop-rails', require:false
+gem 'simple_form'
 
 gem 'dotenv-rails'
 group :production do
