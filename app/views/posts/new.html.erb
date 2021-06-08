@@ -4,19 +4,10 @@
 
   <div class="new-post">
     <%= form_with model:@post, local:true do |f| %>
-      <div class="select-box">
-        <h6 class="post-prefecture">都道府県名</h6>
-        <%= f.text_field :pasa_prefecture %>
-      </div>
-
-      <%= form_for @post do |f| %>
-        <%= f.label :pasa_id %>
-        <%= f.collection_select :pasa_id, Pasa.all, :id, :prefecture, :prompt => true %>
-      <% end %>
-
-      <div class="form-group">
-        <h6 class="post-facility">PA/SA名</h6>
-        <%= f.text_field :pasa_facility %>
+      <div class="post-prefecture">都道府県
+        <%= form_for @post, method: :post do |f| %>
+         <%= f.select :prefecture, Post.prefectures.keys, {} %>
+        <% end %>
       </div>
 
       <%= form_for @post do |f| %>
@@ -24,9 +15,10 @@
         <%= f.collection_select :pasa_id, Pasa.all, :id, :facility, :prompt => true %>
       <% end %>
 
-      <div class="form-group">
-        <h6 class="genre">ジャンル</h6>
-        <%= f.text_field :title %>
+      <div class="post-genre">ジャンル
+        <%= form_for @post, method: :post do |f| %>
+         <%= f.select :genre, Post.genres.keys, {} %>
+        <% end %>
       </div>
 
       <div class="raty">
