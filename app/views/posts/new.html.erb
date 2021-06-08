@@ -1,12 +1,12 @@
   <%= stylesheet_link_tag 'posts', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'jquery.raty', 'data-turbolinks-track': 'reload' %>
+  <%#= javascript_include_tag 'jquery.raty', 'data-turbolinks-track': 'reload' %>
   <script src="/js/jquery.min.js"></script>
   <script src="/js/jquery.raty.js"></script>
   <%= render 'layouts/header' %>
   <h2 class="mt-3">新規投稿</h2>
 
   <div class="new-post">
-    <%= form_with model:@post, url:'/posts/new', local:true do |f| %>
+    <%= form_with model:@post, local:true do |f| %>
       <div class="select-box">
         <h6 class="post-prefecture">都道府県名</h6>
         <%= f.text_field :prefecture %>

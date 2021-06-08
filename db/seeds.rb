@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require "csv"
+
+CSV.foreach('db/pasa.csv') do |info|
+  User.create(:facility => info[0], :prefecture => info[1], :highway_name => info[2])
+end

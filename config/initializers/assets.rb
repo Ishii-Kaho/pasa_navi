@@ -14,4 +14,5 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += %w( users.scss
                                                   homes.scss
                                                   posts.scss
-                                                  jquery.raty.js)
+                                                  jquery.raty.js
+                                                  jquery.min.js)

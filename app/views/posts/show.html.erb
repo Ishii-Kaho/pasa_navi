@@ -3,9 +3,81 @@
   <script src="/js/jquery.min.js"></script>
   <script src="/js/jquery.raty.js"></script>
   <%= render 'layouts/header' %>
-  
-  <h3 class="post-title">
-    <%= @post.title %>
-  </h3>
-  
-  <div class="blog"
+
+  <div class="post-pasa_name">
+    <%= @post.facility %>
+  </div>
+
+  <div class="post-genre_name">
+    <%= @post.genre_name %>
+  </div>
+
+  <% if user_signed_in? %>
+    <div class="favorites">
+      <% if @post.favorited_by?(current_user) %>
+        <p>
+          <%= link_to post_favorite_path(@post), method: :delete do %>
+            ♥<%= @post.favorites.count %> いいね
+          <% end %>
+        </p>
+        <% else %>
+        <p>
+          <%= link_to post_favorites_path(@post), method: :post do %>
+            ♡<%= @post.favorites.count %> いいね
+          <% end %>
+        </p>
+      <% end %>
+    </div>
+    <% else %>
+      ♥<%= @post.favorites.count %> いいね
+    <% end %>
+
+  <div class="post-detail">
+    <h3 class="post-title">
+      <%= @post.title %>
+    </h3>
+
+    <div class="post-image">
+    </div>
+
+    <div class="post-prefecture">
+      <%= @post.prefecture %>
+    </div>
+
+    <div class="post-highway_name">
+      <%= @post.highway_name %>
+    </div>
+
+    <div class="post-facility">
+      <%= @post.facility %>
+    </div>
+
+    <div class="post-genre">
+      <%= @post.genre_name %>
+    </div>
+    <div id="star-rate-<%= post.id %>"></div>
+      <script>
+      $('#star-rate-<%= post.id %>').raty({
+        size: 36,
+        starOff:  '<%= asset_path('star-off.png') %>',
+        starOn : '<%= asset_path('star-on.png') %>',
+        readOnly: true,
+        score: <%= post.cleanliness %>,
+      });
+      </script> 
+    <div class="post-cleanliness">
+      <%= @post.cleanliness %>
+    </div>
+
+    <div class="post-congestion">
+      <%= @post.congestion %>
+    </div>
+
+    <div class="post-satisfaction">
+      <%= @post.satisfaction %>
+    </div>
+
+    <div class="post-opinion">
+      <%= @post.opinion %>
+    </div>
+  </div>

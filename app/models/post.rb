@@ -5,8 +5,16 @@ class Post < ApplicationRecord
   belongs_to :pasa
   belongs_to :genre
   attachment :image
+  
+  def favorited_by?(user)
+    favorites.where(user_id: user.id).exists?
+  end
 
   validates :visit_weekday, inclusion: { in: ["平日","休日","祝日"] }
+  validates :cleanliness, numericality: {
+    less_than_or_equal_to: 5,
+    greater_than_or_equal_to: 1
+  }, presence: true
 
 #   enum prefecture: {
 #     "--都道府県選択--":0,北海道:1,青森県:2,岩手県:3,宮城県:4,秋田県:5,山形県:6,福島県:7,
