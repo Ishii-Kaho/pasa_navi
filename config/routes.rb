@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root to: 'homes#top'
-  resources :users, only: [:show, :edit, :update, :destroy]
-  resources :posts, only: [:index, :show, :new, :create, :destroy] do
-    resources :favorites, only: [:create, :destroy]
-    resources :comments, only: [:create, :destroy]
+  resources :users, only: %i[show edit update destroy]
+  resources :posts, only: %i[index show new create destroy] do
+    resources :favorites, only: %i[create destroy]
+    resources :comments, only: %i[create destroy]
   end
-  resources :pasas, only: [:index, :show]
-  resources :genres, only: [:index, :show]
+  resources :pasas, only: %i[index show]
+  resources :genres, only: %i[index show]
 end

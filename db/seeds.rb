@@ -6,8 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require "csv"
+require 'csv'
 
-CSV.foreach('db/pasa.csv') do |info|
-  User.create(:facility => info[0], :prefecture => info[1], :highway_name => info[2])
+CSV.foreach('db/pasa.csv', headers: true) do |row|
+  Pasa.create(
+    facility: row['facility'],
+    prefecture: row['prefecture'],
+    highway_name: row['highway_name']
+  )
 end

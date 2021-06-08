@@ -1,12 +1,13 @@
 class PostsController < ApplicationController
   def new
     @post = Post.new
+    @pasas = Pasa.all
   end
 
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
-    @post.save
+    @post.save!
     redirect_to posts_path
   end
 
@@ -18,9 +19,10 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-    private
+  private
 
   def post_params
-    params.require(:post).permit(:facility, :prefecture, :highway_name, :cleanliness, :congestion, :satisfaction, :visit_time, :visit_weekday, :title, :opinion)
+    params.require(:post).permit(:facility, :prefecture, :highway_name, :cleanliness, :congestion, :satisfaction,
+                                 :visit_time, :visit_weekday, :title, :opinion)
   end
 end
