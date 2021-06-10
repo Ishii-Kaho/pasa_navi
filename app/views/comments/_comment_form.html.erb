@@ -1,6 +1,6 @@
     <% if user_signed_in? %>
       <div class="new-comment">
-        <%= form_with(model:[post,comment],local: true)do |f| %>
+        <%= form_with(model:[post,comment],remote: true)do |f| %>
           <%= f.text_area :comment,rows:'5',placeholder:'コメント' %>
           <%= f.submit"コメントを投稿" %>
         <% end %>

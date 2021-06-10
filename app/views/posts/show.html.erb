@@ -11,9 +11,9 @@
   <!--<div class="post-genre_name">-->
   <!--  <%#= @post.genre_name %>-->
   <!--</div>-->
-
+<div class="favorite-btn">
   <%= render 'favorites/favorite-btn', post: @post %>
-
+</div>
   <div class="post-detail">
     <h3 class="post-title">
       <%= @post.title %>
@@ -65,6 +65,7 @@
     <div class="post-opinion">
       <%= @post.opinion %>
     </div>
+    <div class="comments"
     <%= render 'comments/comments' %>
     <%= render 'comments/comment_form',post: @post,comment: @comment %>
 
