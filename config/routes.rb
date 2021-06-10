@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   end
   resources :pasas, only: [:index, :show]
   resources :genres, only: [:index, :show]
+  get 'search' => 'posts#search'
 end
