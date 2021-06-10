@@ -1,0 +1,11 @@
+<div class="comment">
+  <% @post.comments.each do |comment| %>
+    <%= comment.user.name %>
+    <% comment.create_at.strftime('%Y/%m/%d') %><%= comment.comment %>
+    <% if comment.user == current_user %>
+    <div class="comment-delete">
+      <%= link_to "削除", post_comment_path(comment.post, comment), method: :delete %>
+    </div>
+    <% end %>
+  <% end %>
+</div>
