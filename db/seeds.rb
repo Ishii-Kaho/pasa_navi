@@ -6,6 +6,19 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.create!(
+  name: 'パーキング太郎',
+  nickname: 'PAたろう',
+  email: 'sample1@sample',
+  password: 'sample1'
+)
+User.create!(
+  name: 'サービス二郎',
+  nickname: 'SAじろう',
+  email: 'sample2@sample',
+  password: 'sample2'
+)
+
 require 'csv'
 
 CSV.foreach('db/pasa.csv', headers: true) do |row|
