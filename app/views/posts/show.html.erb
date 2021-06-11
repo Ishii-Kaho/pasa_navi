@@ -65,9 +65,10 @@
     <div class="post-opinion">
       <%= @post.opinion %>
     </div>
-    <div class="comments"
-    <%= render 'comments/comments' %>
-    <%= render 'comments/comment_form',post: @post,comment: @comment %>
-
+    <div class="post-comments">
+      <%= render 'comments/comments', comments: @post.comments %>
+    </div>
+      <%= render 'comments/comment_form',post: @post,comment: @comment %>
+    
 
   </div>
