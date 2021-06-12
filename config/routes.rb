@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root to: 'homes#top'
   resources :users, only: [:show, :edit, :update, :destroy]
@@ -10,5 +9,5 @@ Rails.application.routes.draw do
   end
   resources :pasas, only: [:index, :show]
   resources :genres, only: [:index, :show]
-  get 'search' => 'posts#search'
+  get 'search' => 'searches#search'
 end

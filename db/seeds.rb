@@ -18,6 +18,16 @@ User.create!(
   email: 'sample2@sample',
   password: 'sample2'
 )
+Genre.create!(
+  name: 'グルメ'
+  )
+Genre.create!(
+  name: 'トイレ'
+  )
+Genre.create!(
+name: '喫煙所'
+)
+
 
 require 'csv'
 

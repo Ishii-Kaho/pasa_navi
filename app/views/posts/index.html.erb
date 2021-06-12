@@ -15,7 +15,7 @@
               <%= attachment_image_tag post, :image, format: 'jpeg', fallback: "no_image.jpg", size:'240x160', class: "image" %>
             </div>
             <div class="name-favorite">
-              <%= post.user.name %>/
+              <%= post.user.nickname %>/
               ♥<%= post.favorites.count %> いいね
             </div>
           <% end %>

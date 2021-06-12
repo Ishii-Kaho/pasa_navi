@@ -1,3 +1,4 @@
+<%= stylesheet_link_tag 'users', media: 'all', 'data-turbolinks-track': 'reload' %>
 <div class="container">
   <div class="row">
     <div class="col-lg-12 mx-auto">
@@ -29,7 +30,7 @@
             <%= f.text_area :emai, autofocus: true, class: "form-control", id:"emai"%>
           </div>
 
-          <%= f.submit "Update User", class: "btn btn-secondary" %>
+          <%= f.submit "更新", class: "btn btn-secondary" %>
         <% end %>
     </div>
   </div>

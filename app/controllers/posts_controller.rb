@@ -17,16 +17,15 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @pasa = @post.pasa
+    @genre = @post.genre
     @comment = Comment.new
   end
 
-
   private
 
-
-
   def post_params
-    params.require(:post).permit(:facility, :prefecture, :highway_name, :cleanliness, :congestion, :satisfaction,
+    params.require(:post).permit(:pasa_id, :genre_id, :image, :cleanliness, :congestion, :satisfaction,
                                  :visit_time, :visit_weekday, :title, :opinion)
   end
 end

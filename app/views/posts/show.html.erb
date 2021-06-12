@@ -4,71 +4,70 @@
   <script src="/js/jquery.raty.js"></script>
   <%= render 'layouts/header' %>
 
-  <!--<div class="post-pasa_name">-->
-  <!--  <%#= @pasa.facility %>-->
-  <!--</div>-->
 
-  <!--<div class="post-genre_name">-->
-  <!--  <%#= @post.genre_name %>-->
-  <!--</div>-->
-<div class="favorite-btn">
-  <%= render 'favorites/favorite-btn', post: @post %>
-</div>
-  <div class="post-detail">
-    <h3 class="post-title">
-      <%= @post.title %>
-    </h3>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 mt-5">
+        <div class="favorite-btn">
+          <%= render 'favorites/favorite-btn', post: @post %>
+        </div>
+          <div class="post-detail">
+            <h3 class="post-title">
+              <%= @post.title %>
+            </h3>
 
-    <div class="post-image">
-      <%= link_to post_path(@post.id) do %>
-        <%= attachment_image_tag @post, :image, format: 'jpeg', fallback: "no_image.jpg", size:'240x160', class: "image" %>
-      <% end %>
+            <div class="post-image">
+              <%= link_to post_path(@post.id) do %>
+                <%= attachment_image_tag @post, :image, format: 'jpeg', fallback: "no_image.jpg", size:'240x160', class: "image" %>
+              <% end %>
+            </div>
+
+            <div class="post-pasa_name">
+              都道府県名：  <%= @pasa.facility %><br>
+              高速道路名：  <%= @pasa.prefecture %><br>
+              PA/SA名：  <%= @pasa.highway_name %><br>
+            </div>
+          
+            <div class="post-genre_name">
+              ジャンル：  <%= @genre.name %>
+            </div>
+            
+            <!--<div id="star-rate-<%#= post.id %>"></div>-->
+            <!--  <script>-->
+            <!--  $('#star-rate-<%#= post.id %>').raty({-->
+            <!--    size: 36,-->
+            <!--    starOff:  '<%#= asset_path('star-off.png') %>',-->
+            <!--    starOn : '<%#= asset_path('star-on.png') %>',-->
+            <!--    readOnly: true,-->
+            <!--    score: <%#= post.cleanliness %>,-->
+            <!--  });-->
+            <!--  </script> -->
+            <!--<div class="post-cleanliness">-->
+            <!--  <%#= @post.cleanliness %>-->
+            <!--</div>-->
+
+            <!--<div class="post-congestion">-->
+            <!--  <%#= @post.congestion %>-->
+            <!--</div>-->
+
+            <!--<div class="post-satisfaction">-->
+            <!--  <%#= @post.satisfaction %>-->
+            <!--</div>-->
+
+            <div class="post-opinion">
+              <%= @post.opinion %>
+            </div>
+            <div class="nickname">
+              <%= @post.user.nickname %>
+            </div>
+            <div class="post-comments">
+              <%= render 'comments/comments', comments: @post.comments %>
+            </div>
+              <%= render 'comments/comment_form',post: @post,comment: @comment %>
+
+
+          </div>
+      </div>
     </div>
-
-    <!--<div class="post-prefecture">-->
-    <!--  <%#= @post.prefecture %>-->
-    <!--</div>-->
-
-    <!--<div class="post-highway_name">-->
-    <!--  <%#= @post.highway_name %>-->
-    <!--</div>-->
-
-    <!--<div class="post-facility">-->
-    <!--  <%#= @post.facility %>-->
-    <!--</div>-->
-
-    <!--<div class="post-genre">-->
-    <!--  <%#= @post.genre_name %>-->
-    <!--</div>-->
-    <!--<div id="star-rate-<%#= post.id %>"></div>-->
-    <!--  <script>-->
-    <!--  $('#star-rate-<%#= post.id %>').raty({-->
-    <!--    size: 36,-->
-    <!--    starOff:  '<%#= asset_path('star-off.png') %>',-->
-    <!--    starOn : '<%#= asset_path('star-on.png') %>',-->
-    <!--    readOnly: true,-->
-    <!--    score: <%#= post.cleanliness %>,-->
-    <!--  });-->
-    <!--  </script> -->
-    <!--<div class="post-cleanliness">-->
-    <!--  <%#= @post.cleanliness %>-->
-    <!--</div>-->
-
-    <!--<div class="post-congestion">-->
-    <!--  <%#= @post.congestion %>-->
-    <!--</div>-->
-
-    <!--<div class="post-satisfaction">-->
-    <!--  <%#= @post.satisfaction %>-->
-    <!--</div>-->
-
-    <div class="post-opinion">
-      <%= @post.opinion %>
-    </div>
-    <div class="post-comments">
-      <%= render 'comments/comments', comments: @post.comments %>
-    </div>
-      <%= render 'comments/comment_form',post: @post,comment: @comment %>
-    
-
   </div>

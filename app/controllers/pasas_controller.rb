@@ -3,5 +3,8 @@ class PasasController < ApplicationController
     @pasas = Pasa.page(params[:page]).reverse_order
   end
 
-  def show; end
+  def show
+    @pasa = Pasa.find(params[:id])
+    @posts = @pasa.posts
+  end
 end
