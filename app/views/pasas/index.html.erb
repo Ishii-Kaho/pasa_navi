@@ -1,13 +1,17 @@
   <%= stylesheet_link_tag 'pasas', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= render 'layouts/header' %>
-  <h2 class="mt-3">PA/SA一覧</h2>
-  <dix class="pasaindex">
-    <% @pasas.each do |pasa| %>
-    <ul>
-      <li>
-          <span><%= link_to pasa.facility, pasa_path(pasa.id) %></span>
-      </li>
-    </ul>
-     <% end %>
+  <div class="col-md-12 m-5">
+    <div class="col-md-3">
+      <h2 class="mt-3">PA/SA一覧</h2>
+    </div>
+    <dix class="pasaindex">
+      <% @pasas.each do |pasa| %>
+      <ul>
+        <li>
+            <span><%= link_to pasa.facility, pasa_path(pasa.id) %></span>
+        </li>
+      </ul>
+       <% end %>
+    </div>
   </div>
   <%= paginate @pasas %>
