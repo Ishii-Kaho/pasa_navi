@@ -13,7 +13,58 @@
           <%= f.label :genre_id %>
           <%= f.collection_select :genre_id, Genre.all, :id, :name, :prompt => true %>
       </div>
+      
+      <div class="raty">
+        <div class="form-group" id="cleanliness-star">
+          <%= f.label :cleanliness,'清潔度', class:'col-md-3 col-form-label' %>
+          <%= f.hidden_field :cleanliness, id: :review_star %>
+        </div>
 
+        <script>
+        $('#cleanliness-star').raty({
+          size     : 50,
+          starOff:'<%= asset_path('star-off.png') %>',
+          starOn :'<%= asset_path('star-on.png') %>',
+          starHalf:'<%= asset_path('star-half.png') %>',
+          scoreName:'post[cleanliness]',
+          half: true,
+        });
+        </script>
+
+        <div class="form-group" id="congestion-star">
+          <%= f.label :congestion,'混雑度', class:'col-md-3 col-form-label' %>
+          <%= f.hidden_field :congestion, id: :review_star %>
+        </div>
+
+        <script>
+        $('#congestion-star').raty({
+          size     : 36,
+          starOff:'<%= asset_path('star-off.png') %>',
+          starOn :'<%= asset_path('star-on.png') %>',
+          starHalf:'<%= asset_path('star-half.png') %>',
+          scoreName:'post[congestion]',
+          half: true,
+        });
+        </script>
+
+        <div class="form-group" id="satisfaction-star">
+          <%= f.label :satisfaction,'満足度', class:'col-md-3 col-form-label' %>
+          <%= f.hidden_field :satisfaction, id: :review_star %>
+        </div>
+
+        <script>
+        $('#satisfaction-star').raty({
+          size     : 36,
+          starOff:'<%= asset_path('star-off.png') %>',
+          starOn :'<%= asset_path('star-on.png') %>',
+          starHalf:'<%= asset_path('star-half.png') %>',
+          scoreName:'post[satisfaction]',
+          half: true,
+        });
+        </script>
+
+      </div>
+      
       <div class="form-group">
         <label for ="post-image"></label>
         <%= f.attachment_field :image, placeholder: "投稿画像" %>
