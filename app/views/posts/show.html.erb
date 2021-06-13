@@ -33,16 +33,53 @@
               ジャンル：  <%= @genre.name %>
             </div>
             
-            <!--<div id="star-rate-<%#= post.id %>"></div>-->
-            <!--  <script>-->
-            <!--  $('#star-rate-<%#= post.id %>').raty({-->
-            <!--    size: 36,-->
-            <!--    starOff:  '<%#= asset_path('star-off.png') %>',-->
-            <!--    starOn : '<%#= asset_path('star-on.png') %>',-->
-            <!--    readOnly: true,-->
-            <!--    score: <%#= post.cleanliness %>,-->
-            <!--  });-->
-            <!--  </script> -->
+            <!--清潔度 評価星の表示-->
+            <!--<div class="rate-cleanliness">清潔度-->
+            <!--  <div id="star-rate-cleanliness<%= @post.id %>"></div>-->
+            <!--    <script>-->
+            <!--    $('#star-rate-cleanliness<%= @post.id %>').raty({-->
+            <!--      size: 36,-->
+            <!--      starOff:  '<%= asset_path('star-off.png') %>',-->
+            <!--      starOn : '<%= asset_path('star-on.png') %>',-->
+            <!--      starHalf: '<%= asset_path('star-half.png') %>',-->
+            <!--      half: true,-->
+            <!--      readOnly: true,-->
+            <!--      score: <%= @post.cleanliness %>,-->
+            <!--    });-->
+            <!--    </script> -->
+            <!--</div>-->
+              
+            <!--混雑度 評価星の表示-->
+            <div class="rate-congestion">混雑度
+              <div id="star-rate-congestion<%= @post.id %>"></div>
+                <script>
+                $('#star-rate-congestion<%= @post.id %>').raty({
+                  size: 36,
+                  starOff:  '<%= asset_path('star-off.png') %>',
+                  starOn : '<%= asset_path('star-on.png') %>',
+                  starHalf: '<%= asset_path('star-half.png') %>',
+                  half: true,
+                  readOnly: true,
+                  score: <%= @post.congestion %>,
+                });
+                </script> 
+            </div>
+              
+            <!--満足度 評価星の表示-->
+            <div class="rate-satisfaction">満足度
+              <div id="star-rate-satisfaction<%= @post.id %>"></div>
+                <script>
+                $('#star-rate-satisfaction<%= @post.id %>').raty({
+                  size: 36,
+                  starOff:  '<%= asset_path('star-off.png') %>',
+                  starOn : '<%= asset_path('star-on.png') %>',
+                  starHalf: '<%= asset_path('star-half.png') %>',
+                  half: true,
+                  readOnly: true,
+                  score: <%= @post.satisfaction %>,
+                });
+                </script>
+            </div>
             <!--<div class="post-cleanliness">-->
             <!--  <%#= @post.cleanliness %>-->
             <!--</div>-->

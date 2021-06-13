@@ -1,0 +1,6 @@
+    <%= form_with model:@post, local:true do |f| %>
+      <div class="post-pasa">PA/SA名
+          <%= f.label :pasa_id %>
+          <%= f.collection_select :pasa_id, Pasa.where(prefecture: @prefecture), :id, :facility, :prompt => true %>
+      </div>
+    <% end %>
