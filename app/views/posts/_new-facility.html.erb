@@ -1,6 +1,32 @@
-    <%= form_with model:@post, local:true do |f| %>
+
       <div class="post-pasa">PA/SA名
-          <%= f.label :pasa_id %>
-          <%= f.collection_select :pasa_id, Pasa.where(prefecture: @prefecture), :id, :facility, :prompt => true %>
+          <%#= f.label :pasa_id %>
+          <%= text_field_tag :facility %>
       </div>
-    <% end %>
+    
+<script>
+    $(function(){
+      const dataList = function(request, response) {
+      $.ajax({
+        url: '/pasas/autocomplete_facility/' + request.term,
+        dataType: 'json',
+        type: 'GET',
+        cache: true,
+        success: function(data) {
+          response(data);
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) {
+          response(['']);
+        }
+      });
+    }
+    $('#facility').autocomplete({
+        source: dataList,
+        autoFocus: true, // 自動的に先頭の項目にフォーカスするか
+        delay: 300, // 入力してからサジェストが動くまでの時間(ms)
+        minLength: 1 // １文字入力しないとサジェストが動かない
+      })
+  });
+  </script>
+    
+    

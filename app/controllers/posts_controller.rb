@@ -5,7 +5,9 @@ class PostsController < ApplicationController
   end
 
   def create
+    pasa = Pasa.find_by(facility: params[:facility])
     @post = Post.new(post_params)
+    @post.pasa_id = pasa.id
     @post.user_id = current_user.id
     @post.save!
     redirect_to posts_path
@@ -23,10 +25,15 @@ class PostsController < ApplicationController
     @comment = Comment.new
   end
 
+
+
+
   private
 
   def post_params
     params.require(:post).permit(:pasa_id, :genre_id, :image, :cleanliness, :congestion, :satisfaction,
                                  :visit_time, :visit_weekday, :title, :opinion)
   end
+  
+
 end
