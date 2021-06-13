@@ -5,7 +5,7 @@
 
   <div class="col-lg-3">
     <div class="profile-container">
-     <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", size:'40x40' %>
+     <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", size:'100x100' %>
 
       <div class="user-info">
         <div class="user-name">
@@ -27,12 +27,27 @@
     </div>
   </div>
 
-  <div class="col-lg-9">
+  <div class="row">
     <% @posts.each do |post| %>
-      <%= link_to post.title, post_path(post.id) %>
-      <%= post.image %>
-      <%= post.opinion %>
-      <%= post.visit_time %>
+      <div class="col-md-3 m-3">
+        <div class="one-post">
+          <%= link_to post_path(post.id) do %>
+            <h3 class="title">
+              <%= post.title %>
+            </h3>
+            <div class="image">
+              <%= attachment_image_tag post, :image, format: 'jpeg', fallback: "no_image.jpg", size:'240x160', class: "image" %>
+            </div>
+            <div class="opinion">
+              <%= post.opinion %>
+            </div>
+            <div class="name-favorite">
+              <%= post.user.nickname %>/
+              ♥<%= post.favorites.count %> いいね
+            </div>
+          <% end %>
+        </div>
+      </div>
     <% end %>
   </div>
 
