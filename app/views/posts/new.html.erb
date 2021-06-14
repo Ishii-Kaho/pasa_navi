@@ -5,6 +5,13 @@
   <% if flash[:alert] %>
     <p class="alert alert-danger"><%= flash[:alert] %></p>
   <% end %>
+  
+  <% if @post.errors.any? %>
+    <%= @post.errors.count %>error prohibited this obj from being saved:
+    <% @post.errors.full_messages.each do |message| %>
+      <%= message %>
+    <% end %>
+  <% end %>
 
   <div class="new-post">
     
