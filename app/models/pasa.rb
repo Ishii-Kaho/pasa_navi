@@ -3,11 +3,25 @@ class Pasa < ApplicationRecord
   def self.search(search,word)
     @pasa = Pasa.all
   end
-  
+
+  def self.search(search, word)
+          if search == "forward_match"
+                          @pasa = Pasa.where("facility LIKE?","#{word}%")
+          elsif search == "backward_match"
+                          @pasa = Pasa.where("facility LIKE?","%#{word}")
+          elsif search == "perfect_match"
+                          @pasa = Pasa.where("#{word}")
+          elsif search == "partial_match"
+                          @pasa = Pasa.where("facility LIKE?","%#{word}%")
+          else
+                          @pasa = Pasa.all
+          end
+  end
+
   scope :by_facility_like, lambda { |facility|
     where('facility LIKE :value', { value: "#{sanitize_sql_like(facility)}%"})
   }
-  
+
     enum prefecture: {
     "--都道府県選択--":0,北海道:1,青森県:2,岩手県:3,宮城県:4,秋田県:5,山形県:6,福島県:7,
     茨城県:8,栃木県:9,群馬県:10,埼玉県:11,千葉県:12,東京都:13,神奈川県:14,
@@ -18,7 +32,7 @@ class Pasa < ApplicationRecord
     徳島県:36,香川県:37,愛媛県:38,高知県:39,
     福岡県:40,佐賀県:41,長崎県:42,熊本県:43,大分県:44,宮崎県:45,鹿児島県:46,沖縄県:47
   }
-  
+
     enum highway_name:  {
     "--高速道路選択--":0,道央自動車道:1,札樽自動車道:2,道東自動車道:3,東北自動車道:4,八戸自動車道:5,
     秋田自動車道:6,山形自動車道:7,磐越自動車道:8,日本海東北自動車道:9,東北中央自動車道:10,北陸自動車道:11,東京外環自動車道:12,関越自動車道:13,上信越自動車道:14,長野自動車道:15,
@@ -33,5 +47,5 @@ class Pasa < ApplicationRecord
     京奈和自動車道:81,北近畿豊岡自動車道:82,西広島バイパス:83,松永道路:84,姫路バイパス:85,日光宇都宮道路:86,播但連絡道路:87,
     のと里山海道:88
     }
-    
+
 end

@@ -11,14 +11,25 @@ class Post < ApplicationRecord
     favorites.where(user_id: user.id).exists?
   end
 
-  def self.search(search,word)
-    @post = Post.all
+  def self.search(search, word)
+          if search == "forward_match"
+                          @post = Post.where("title LIKE?","#{word}%")
+          elsif search == "backward_match"
+                          @post = Post.where("title LIKE?","%#{word}")
+          elsif search == "perfect_match"
+                          @post = Post.where("#{word}")
+          elsif search == "partial_match"
+                          @post = Post.where("title LIKE?","%#{word}%")
+          else
+                          @post = Post.all
+          end
   end
-  # validates :visit_weekday, inclusion: { in: ["平日","休日","祝日"] }
-  # validates :cleanliness, numericality: {
-  #   less_than_or_equal_to: 5,
-  #   greater_than_or_equal_to: 1
-  # }, presence: true
+  validates :visit_weekday, inclusion: { in: ["平日","休日","祝日"] }
+  validates :cleanliness, numericality: {
+     less_than_or_equal_to: 5,
+     greater_than_or_equal_to: 1
+   }, presence: true
+  validates :pasa_id, presence: true
 
 
 

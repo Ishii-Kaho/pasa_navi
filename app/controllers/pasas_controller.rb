@@ -15,6 +15,8 @@ class PasasController < ApplicationController
     render json: facilities
   end
   
+
+  
   private
   
   def autocomplete_params

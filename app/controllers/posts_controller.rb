@@ -5,12 +5,19 @@ class PostsController < ApplicationController
   end
 
   def create
-    pasa = Pasa.find_by(facility: params[:facility])
     @post = Post.new(post_params)
-    @post.pasa_id = pasa.id
-    @post.user_id = current_user.id
-    @post.save!
-    redirect_to posts_path
+    pasa = Pasa.find_by(facility: params[:facility])
+    if 
+      pasa == nil
+      @pasas = Pasa.all
+      flash[:alert] = "正しいPA/SA名を入力して下さい"
+      render :new
+    else
+      @post.pasa_id = pasa.id
+      @post.user_id = current_user.id
+      @post.save!
+      redirect_to posts_path
+    end
   end
 
   def index
