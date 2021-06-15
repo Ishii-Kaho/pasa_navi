@@ -8,4 +8,8 @@ class User < ApplicationRecord
   has_many :favorites
   has_many :favorited_posts, through: :favorites, source: :post
   attachment :profile_image
+
+  validates :name, presence: true
+  validates :nickname, presence: true
+  validates :email, presence: true
 end

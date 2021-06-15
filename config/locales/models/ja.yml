@@ -1,0 +1,24 @@
+ja:
+  activerecord:
+    models:
+      post: 投稿
+      pasa: PA/SA
+      user: ユーザー
+    attributes:
+      post:
+        cleanliness: 清潔度
+        congestion: 混雑度
+        satisfaction: 満足度
+        visit_time: 訪問日時
+        title: タイトル
+        opinion: 投稿本文
+        genre: ジャンル
+        pasa_id: PA/SA名
+      pasa:
+        facility: PA/SA名
+        prefecture: 都道府県
+        highway_name: 高速道路名
+      user:
+        name: ユーザー名
+        nickname: ニックネーム
+        email: メールアドレス

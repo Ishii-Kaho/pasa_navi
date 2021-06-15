@@ -12,47 +12,41 @@ class Post < ApplicationRecord
   end
 
   def self.search(search, word)
-          if search == "forward_match"
-                          @post = Post.where("title LIKE?","#{word}%")
-          elsif search == "backward_match"
-                          @post = Post.where("title LIKE?","%#{word}")
-          elsif search == "perfect_match"
-                          @post = Post.where("#{word}")
-          elsif search == "partial_match"
-                          @post = Post.where("title LIKE?","%#{word}%")
-          else
-                          @post = Post.all
-          end
+    @post = if search == 'forward_match'
+              Post.where('title LIKE?', "#{word}%")
+            elsif search == 'backward_match'
+              Post.where('title LIKE?', "%#{word}")
+            elsif search == 'perfect_match'
+              Post.where(word.to_s)
+            elsif search == 'partial_match'
+              Post.where('title LIKE?', "%#{word}%")
+            else
+              Post.all
+            end
   end
-  
+
   validates :cleanliness, numericality: {
     less_than_or_equal_to: 5,
     greater_than_or_equal_to: 1
-  }, presence: true
-  
+  }
+
   validates :congestion, numericality: {
     less_than_or_equal_to: 5,
     greater_than_or_equal_to: 1
-  }, presence: true
-  
+  }
+
   validates :satisfaction, numericality: {
     less_than_or_equal_to: 5,
     greater_than_or_equal_to: 1
-  }, presence: true
-  
+  }
+
   validates :pasa_id, presence: true
-  validates :genre_id, presence: true
+  # validates :genre_id, presence: true
   validates :title, presence: true
   validates :opinion, presence: true
   validates :visit_time, presence: true
-  
-
-
-
-
-
 
   enum genre: {
-    "--ジャンル選択--":0,グルメ:1,トイレ:2,喫煙所:3
+    "--ジャンル選択--": 0, グルメ: 1, トイレ: 2, 喫煙所: 3
   }
 end

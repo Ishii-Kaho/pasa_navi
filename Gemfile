@@ -66,13 +66,14 @@ gem 'devise'
 gem 'enum_help'
 gem 'font-awesome-sass', '~> 5.13'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'kaminari', '~> 1.2.1'
+gem 'rails-i18n'
 gem 'refile', require: 'refile/rails', github: 'manfe/refile'
 gem 'refile-mini_magick'
 gem 'rubocop', require: false
 gem 'rubocop-rails', require: false
 gem 'simple_form'
-gem 'jquery-ui-rails'
 
 gem 'dotenv-rails'
 group :production do
