@@ -7,6 +7,7 @@
           <ul>
             <li><i class="fas fa-list-alt"></i><%= link_to "投稿一覧", posts_path %></li>
             <li><i class="fas fa-store-alt"></i><%= link_to "pasa一覧", pasas_path %></li>
+            <li><i class="fas fa-utensils"></i><%= link_to "ジャンル一覧", genres_path %></li>
             <li><i class="fas fa-user-alt"></i><%= link_to "マイページ", user_path(current_user.id) %></li>
             <li><i class="fas fa-sign-out-alt"></i><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
           </ul>
@@ -16,6 +17,7 @@
           <ul>
             <li><i class="fas fa-list-alt"></i><%= link_to "投稿一覧", posts_path %></li>
             <li><i class="fas fa-store-alt"></i><%= link_to "pasa一覧", pasas_path %></li>
+            <li><i class="fas fa-utensils"></i><%= link_to "ジャンル一覧", genres_path %></li>
             <li><i class="fas fa-sign-in-alt"></i><%= link_to "ログイン", new_user_session_path %></li>
             <li><i class="fas fa-user-plus"></i><%= link_to "サインアップ", new_user_registration_path %></li>
           </ul>

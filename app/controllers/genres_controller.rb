@@ -13,9 +13,4 @@ class GenresController < ApplicationController
     @genre = Genre.find(3)
     @posts = @genre.posts
   end
-
-  def show
-    @genre = Genre.find(params[:id])
-    @post = @genre.posts
-  end
 end

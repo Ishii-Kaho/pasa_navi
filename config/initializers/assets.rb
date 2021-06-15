@@ -15,5 +15,6 @@ Rails.application.config.assets.precompile += %w[ users.scss
                                                   homes.scss
                                                   posts.scss
                                                   pasas.scss
+                                                  genres.scss
                                                   jquery.raty.js
                                                   jquery.min.js]
