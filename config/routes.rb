@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   resources :pasas, only: %i[index show] do
     get '/autocomplete_facility/:facility', on: :collection, action: :autocomplete_facility
   end
-  resources :genres, only: %i[index show]
+  resources :genres, only: %i[index]
+  get 'gourmet' => 'genres#gourmet'
+  get 'toilet' => 'genres#toilet'
+  get 'smoking' => 'genres#smoking'
   get 'search' => 'searches#search'
 end

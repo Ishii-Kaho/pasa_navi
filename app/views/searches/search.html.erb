@@ -14,7 +14,7 @@
          <% @pasa.each do |pasa| %>
          <tr>
           <td>
-           <%= pasa.facility %>
+           <%= link_to pasa.facility, pasa_path(pasa.id) %>
           </td>
           <td><%= pasa.prefecture %></td>
           <td><%= pasa.highway_name %></td>
