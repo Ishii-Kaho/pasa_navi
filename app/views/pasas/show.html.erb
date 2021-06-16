@@ -54,7 +54,7 @@
                 ♥<%= post.favorites.count %> いいね
             </div>
             <div class="created_at">
-                <%= post.created_at %>
+                投稿日：<%= post.created_at.strftime('%Y/%m/%d') %>
             </div>
           </div>
         </div>
@@ -62,3 +62,4 @@
     </div>
   </div>
 </div>
+<%= render 'layouts/footer' %>

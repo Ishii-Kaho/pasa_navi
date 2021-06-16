@@ -5,7 +5,7 @@
   <%= render 'layouts/header' %>
 
 
-  
+
   <div class="container">
     <div class="row">
       <div class="col-md-12 mt-5">
@@ -24,15 +24,15 @@
             </div>
 
             <div class="post-pasa_name">
-              都道府県名：  <%= @pasa.facility %><br>
-              高速道路名：  <%= @pasa.prefecture %><br>
+              都道府県名：  <%= @pasa.prefecture %><br>
+              高速道路名：  <%= link_to @pasa.facility, pasa_path(@pasa.id) %><br>
               PA/SA名：  <%= @pasa.highway_name %><br>
             </div>
-          
+
             <div class="post-genre_name">
               ジャンル：  <%= @genre.name %>
             </div>
-            
+
             <!--清潔度 評価星の表示-->
             <div class="rate-cleanliness">清潔度
               <div id="star-rate-cleanliness<%= @post.id %>"></div>
@@ -46,9 +46,9 @@
                   readOnly: true,
                   score: <%= @post.cleanliness %>,
                 });
-                </script> 
+                </script>
             </div>
-              
+
             <!--混雑度 評価星の表示-->
             <div class="rate-congestion">混雑度
               <div id="star-rate-congestion<%= @post.id %>"></div>
@@ -62,9 +62,9 @@
                   readOnly: true,
                   score: <%= @post.congestion %>,
                 });
-                </script> 
+                </script>
             </div>
-              
+
             <!--満足度 評価星の表示-->
             <div class="rate-satisfaction">満足度
               <div id="star-rate-satisfaction<%= @post.id %>"></div>
