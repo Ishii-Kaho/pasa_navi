@@ -24,6 +24,7 @@ class PostsController < ApplicationController
 
   def index
     # @posts = Post.all
+    # いいね数順に並び替える
     @posts = Post.includes(:favorited_users).sort { |a, b| b.favorited_users.size <=> a.favorited_users.size }
   end
 

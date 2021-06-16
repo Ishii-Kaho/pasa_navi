@@ -6,22 +6,24 @@
   <h3 class="order-post-heading m-3">新着順</h3>
   <div class="row">
     <% @posts.last(4).each do |post| %>
-      <div class="one-post">
-        <%= link_to post_path(post.id) do %>
-          <h3 class="title">
-            <%= post.title %>
-          </h3>
-          <div class="image">
-            <%= attachment_image_tag post, :image, format: 'jpeg', fallback: "no_image.jpg", size:'240x160', class: "image" %>
-          </div>
-          <div class="name-favorite">
-            <%= post.user.nickname %>/
-            ♥<%= post.favorites.count %> いいね
-          </div>
-          <div class="created_at">
-              投稿日：<%= post.created_at.strftime('%Y/%m/%d') %>
-          </div>
-        <% end %>
+      <div class="col-md-3">
+        <div class="one-post-new">
+          <%= link_to post_path(post.id) do %>
+            <h3 class="title">
+              <%= post.title %>
+            </h3>
+            <div class="image">
+              <%= attachment_image_tag post, :image, format: 'jpeg', fallback: "no_image.jpg", size:'240x160', class: "image" %>
+            </div>
+            <div class="name-favorite">
+              <%= post.user.nickname %>/
+              ♥<%= post.favorites.count %> いいね
+            </div>
+            <div class="created_at">
+                投稿日：<%= post.created_at.strftime('%Y/%m/%d') %>
+            </div>
+          <% end %>
+        </div>
       </div>
     <% end %>
   </div>
@@ -29,7 +31,7 @@
   <h3 class="order-post-heading">人気順</h3>
   <div class="row">
     <% @posts.each do |post| %>
-      <div class="col-md-3 m-3">
+      <div class="col-md-3">
         <div class="one-post">
           <%= link_to post_path(post.id) do %>
             <h3 class="title">

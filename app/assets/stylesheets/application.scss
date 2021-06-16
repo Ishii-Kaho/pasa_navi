@@ -53,6 +53,22 @@ header{
   align-items: center;
 }
 
+#box{
+  height: 600px;
+}
+.image1 {
+  background-image: image-url("kurushimakaikyouSA.jpg");
+}
+.image2 {
+  background-image: image-url("miyajimaSA.jpg");
+}
+.image3 {
+  background-image: image-url("sa1.jpg");
+}
+.image4 {
+  background-image: image-url("umihotaru.jpg");
+}
+
 .nav-list{
   font-size: 20px;
   margin-left: auto;
