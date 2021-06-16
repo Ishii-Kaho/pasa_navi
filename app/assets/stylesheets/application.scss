@@ -53,8 +53,13 @@ header{
   align-items: center;
 }
 
+.main-visual{
+  display: flex;
+}
+
 #box{
-  height: 600px;
+  height: 400px;
+  width: 800px;
 }
 .image1 {
   background-image: image-url("kurushimakaikyouSA.jpg");
