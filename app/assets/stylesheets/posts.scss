@@ -21,7 +21,7 @@ h2{
   text-align: center;
 }
 
-h2:before {
+h2::before {
   position: absolute;
   top: -7px;
   left: -7px;
