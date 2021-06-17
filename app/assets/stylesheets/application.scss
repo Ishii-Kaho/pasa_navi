@@ -53,26 +53,7 @@ header{
   align-items: center;
 }
 
-.main-visual{
-  display: flex;
-}
 
-#box{
-  height: 400px;
-  width: 800px;
-}
-.image1 {
-  background-image: image-url("kurushimakaikyouSA.jpg");
-}
-.image2 {
-  background-image: image-url("miyajimaSA.jpg");
-}
-.image3 {
-  background-image: image-url("sa1.jpg");
-}
-.image4 {
-  background-image: image-url("umihotaru.jpg");
-}
 
 .nav-list{
   font-size: 20px;
@@ -80,7 +61,9 @@ header{
 
 }
 
-
+.new-post-create{
+  margin-left: auto;
+}
 
 li{
   list-style-type: none;

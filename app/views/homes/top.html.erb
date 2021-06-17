@@ -1,12 +1,14 @@
 <%= stylesheet_link_tag 'homes', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= render 'layouts/header' %>
-<div class="main-visual">
+
+<div class="main-visual mt-5">
   <div class="main-visual-text">
     <p>あなたのぴったりな<br>
     パーキングエリア・サービスエリアを探す
     </p>
     <h1>pasa navi</h1>
   </div>
+  
   <div id="box">
     <div id="images">
       <div class="image1"></div>
@@ -16,32 +18,33 @@
     </div>
   </div>
 </div>
+
 <div class="pasanavi_about">
   <div class="pasanavi_about-text">
-    <h1>pasa naviとは？</h1>
+    <p class="pasanavi-toha">pasa naviとは？</p>
     <p>パーキングエリア・サービスエリアの<br>
-    評価やおすすめを共有するSNSです
+      評価やおすすめを共有するSNSです
     </p>
   </div>
   <div class="pasanavi_about-visual">
-    
   </div>
 </div>
-  <div class="pasanavi_about-detail">
-    <div class="genres">
-      <div class="food">
-        <div class="food-image"></div>
-        <div class="food-text"><%= link_to "グルメ", gourmet_path %></div>
-      </div>
-      <div class="toilet">
-        <div class="toilet-text"><%= link_to "トイレ", toilet_path %></div>
-      </div>
-      <div class="smoking">
-        <div class="smoking-text"><%= link_to "喫煙所", smoking_path %></div>
-      </div>
+
+<div class="pasanavi_about-detail">
+  <div class="genres">
+    <div class="food">
+      <div class="genre-text"><i class="fas fa-utensils"></i><%= link_to "グルメ", gourmet_path %></div>
+      <div class="food-image"></div>
+    </div>
+    <div class="toilet">
+      <div class="genre-text"><i class="fas fa-toilet"></i><%= link_to "トイレ", toilet_path %></div>
+      <div class="toilet-image"></div>
+    </div>
+    <div class="smoking">
+      <div class="genre-text"><i class="fas fa-smoking"></i><%= link_to "喫煙所", smoking_path %></div>
+      <div class="smoking-image"></div>
     </div>
   </div>
-
-
+</div>
 
 <%= render 'layouts/footer' %>

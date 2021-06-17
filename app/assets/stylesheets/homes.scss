@@ -18,21 +18,45 @@
   margin: auto;
 }
 
-.main-visual-text{
 
+.main-visual{
+  display: flex;
+}
+
+#box{
+  height: 400px;
+  width: 800px;
+}
+.image1 {
+  background-image: image-url("kurushimakaikyouSA.jpg");
+}
+.image2 {
+  background-image: image-url("miyajimaSA.jpg");
+}
+.image3 {
+  background-image: image-url("sa1.jpg");
+}
+.image4 {
+  background-image: image-url("umihotaru.jpg");
 }
 
 .pasanavi_about{
-  height: 200px;
+  height: 400px;
+  display: flex;
 }
 
 .pasanavi_about-text{
-  margin: 30px;
+  margin: 0 auto;
+  align-items : center;
+  justify-content: center;
+  // line-height: 400px;
 }
 
 .pasanavi_about-visual{
-  height: 200px;
-  background-image: image-url("what's_pasanavi.png");
+  height: 400px;
+  width: 600px;
+  background-image: image-url("pasanavi-toha.jpg");
+  background-size: cover;
 }
 
 .genres{
@@ -40,43 +64,34 @@
   justify-content: center;
 }
 
-.food{
-  width: 300px;
-  height: 200px;
+
+.genre-text{
+  margin: 5px;
+  font-size: 80px;
+  text-align: center;
+}
+
+.food-image{
+  width: 600px;
+  height: 400px;
   background-image: image-url("food.jpg");
-  margin: 10px 0 10px;
-  font-size: 80px;
   background-size: cover;
-  text-align: center;
-  line-height: 200px;
+  margin: 0 5px 5px 0;
 }
 
-
-
-.food-text{
-  width: 300px;
-  height: 200px;
-  background-color: rgba( 255, 255, 255, 0.5);
-}
-
-.smoking{
-  width: 300px;
-  height: 200px;
-  font-size: 80px;
-  background-image: image-url("smoking.jpg");
-  margin: 10px 0 10px;
-  background-size: cover;
-  text-align: center;
-  line-height: 200px;
-}
-
-.toilet{
-  width: 300px;
-  height: 200px;
-  font-size: 80px;
+.toilet-image{
+  width: 600px;
+  height: 400px;
   background-image: image-url("toilet.jpg");
-  margin: 10px;
   background-size: cover;
-  text-align: center;
-  line-height: 200px;
+  margin: 0 5px 5px 0;
 }
+
+.smoking-image{
+  width: 600px;
+  height: 400px;
+  background-image: image-url("smoking.jpg");
+  background-size: cover;
+  margin: 0 20px 20px 0;
+}
+

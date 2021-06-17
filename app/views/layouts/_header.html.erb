@@ -26,13 +26,15 @@
     </div>
   </nav>
 </header>
-<% if user_signed_in? %>
-  <%= link_to new_post_path, class: "new-post" do %><i class="fas fa-pen-nib"></i>投稿を作成する<% end %>
-<% else %>
-<% end %>
+<div class="new-post-create">
+  <% if user_signed_in? %>
+    <%= link_to new_post_path, class: "new-post" do %><i class="fas fa-pen-nib"></i>投稿を作成する<% end %>
+  <% else %>
+  <% end %>
+</div>
 
 <!--検索機能-->
-<div class="search">
+<div class="search m-3">
   <%= form_tag(search_path, method: :get) do %>
 
     <!--rangeというparamsに[[]]の中身たちを収納-->
