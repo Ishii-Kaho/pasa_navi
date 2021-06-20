@@ -1,8 +1,8 @@
 class Pasa < ApplicationRecord
   has_many :posts
-  def self.search(_search, _word)
-    @pasa = Pasa.all
-  end
+  # def self.search(_search, _word)
+  #   @pasa = Pasa.all
+  # end
 
   def self.search(search, word)
     @pasa = if search == 'forward_match'

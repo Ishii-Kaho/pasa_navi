@@ -4,8 +4,10 @@
   <div class="pasanavi_about-detail">
     <div class="genres">
       <div class="food">
-        <div class="genre-text"><i class="fas fa-utensils"></i><%= link_to "グルメ", gourmet_path %></div>
-        <div class="food-image"></div>
+        <%= link_to gourmet_path do %>
+          <div class="genre-text"><i class="fas fa-utensils"></i>グルメ</div>
+          <div class="food-image"></div>
+        <% end %>
       </div>
       <div class="toilet">
         <div class="genre-text"><i class="fas fa-toilet"></i><%= link_to "トイレ", toilet_path %></div>

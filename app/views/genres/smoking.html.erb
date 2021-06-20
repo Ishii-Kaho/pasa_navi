@@ -1,21 +1,24 @@
-<h2 class="heading mt-3">喫煙所</h2>
-<div class="container">
-    <% @posts.each do |post| %>
-      <div class="col-md- m-3">
-        <div class="one-post">
-          <%= link_to post_path(post.id) do %>
-            <h3 class="title">
-              <%= post.title %>
-            </h3>
-            <div class="image">
-              <%= attachment_image_tag post, :image, format: 'jpeg', fallback: "no_image.jpg", size:'240x160', class: "image" %>
-            </div>
-            <div class="name-favorite">
-              <%= post.user.nickname %>/
-              ♥<%= post.favorites.count %> いいね
-            </div>
-          <% end %>
-        </div>
+<%= render 'layouts/header' %>
+
+<h2 class="heading col-md-3 mt-3">ジャンル：喫煙所</h2>
+<div class="row">
+  <% @posts.each do |post| %>
+    <div class="col-md-3 m-3">
+      <div class="one-post">
+        <%= link_to post_path(post.id) do %>
+          <h3 class="title">
+            <%= post.title %>
+          </h3>
+          <div class="image">
+            <%= attachment_image_tag post, :image, format: 'jpeg', fallback: "no_image.jpg", size:'240x160', class: "image" %>
+          </div>
+          <div class="name-favorite">
+            <%= post.user.nickname %>/
+            ♥<%= post.favorites.count %> いいね
+          </div>
+        <% end %>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
+</div>
+<%= render 'layouts/footer' %>
