@@ -10,12 +10,16 @@
         <% end %>
       </div>
       <div class="toilet">
-        <div class="genre-text"><i class="fas fa-toilet"></i><%= link_to "トイレ", toilet_path %></div>
-        <div class="toilet-image"></div>
+        <%= link_to toilet_path do %>
+          <div class="genre-text"><i class="fas fa-toilet"></i>トイレ</div>
+          <div class="toilet-image"></div>
+        <% end %>
       </div>
       <div class="smoking">
-        <div class="genre-text"><i class="fas fa-smoking"></i><%= link_to "喫煙所", smoking_path %></div>
-        <div class="smoking-image"></div>
+        <%= link_to smoking_path do %>
+          <div class="genre-text"><i class="fas fa-smoking"></i>喫煙所</div>
+          <div class="smoking-image"></div>
+        <% end %>
       </div>
     </div>
   </div>

@@ -3,7 +3,6 @@
 
       <h2 class="heading col-md-3 m-3">PA/SA一覧</h2>
       <div class="col-md-12 m-5">
-    <!--テーブルで作成する-->
 
       <table class="table table-striped">
         <thead>
@@ -28,17 +27,6 @@
           <% end %>
         </tbody>
       </table>
-  <!--    <div class="pasaindex">-->
-  <!--      <div class="pasaname">-->
-  <!--        <ul>-->
-  <!--          <li>-->
-  <!--            <span><%#= link_to pasa.facility, pasa_path(pasa.id) %></span>-->
-  <!--          </li>-->
-  <!--        </ul>-->
-  <!--      </div>-->
-  <!--    </div>-->
-  <!--  <%# end %>-->
-  <!--</div>-->
   <%= paginate @pasas %>
 
   <%= render 'layouts/footer' %>
