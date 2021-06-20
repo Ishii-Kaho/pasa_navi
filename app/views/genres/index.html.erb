@@ -1,16 +1,21 @@
 <%= stylesheet_link_tag 'genres', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= render 'layouts/header' %>
-<div class="pasanavi_about-detail">
+<div class="col-lg-12">
+  <div class="pasanavi_about-detail">
     <div class="genres">
       <div class="food">
+        <div class="genre-text"><i class="fas fa-utensils"></i><%= link_to "グルメ", gourmet_path %></div>
         <div class="food-image"></div>
-        <div class="food-text"><%= link_to "グルメ", gourmet_path %></div>
       </div>
       <div class="toilet">
-        <div class="toilet-text"><%= link_to "トイレ", toilet_path %></div>
+        <div class="genre-text"><i class="fas fa-toilet"></i><%= link_to "トイレ", toilet_path %></div>
+        <div class="toilet-image"></div>
       </div>
       <div class="smoking">
-        <div class="smoking-text"><%= link_to "喫煙所", smoking_path %></div>
+        <div class="genre-text"><i class="fas fa-smoking"></i><%= link_to "喫煙所", smoking_path %></div>
+        <div class="smoking-image"></div>
       </div>
     </div>
+  </div>
+</div>
 <%= render 'layouts/footer' %>

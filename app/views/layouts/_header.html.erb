@@ -1,25 +1,25 @@
 <header>
   <nav>
     <div class="container">
-      <%= link_to image_tag("logo_transparent.png", class:"logo", size: "110x100"), root_path %>
+      <%= link_to image_tag("logo.png", class:"logo", size: "160x60"), root_path %>
       <div class="nav-list">
         <% if user_signed_in? %>
           <ul>
-            <li><i class="fas fa-list-alt"></i><%= link_to "投稿一覧", posts_path %></li>
-            <li><i class="fas fa-store-alt"></i><%= link_to "pasa一覧", pasas_path %></li>
-            <li><i class="fas fa-utensils"></i><%= link_to "ジャンル一覧", genres_path %></li>
-            <li><i class="fas fa-user-alt"></i><%= link_to "マイページ", user_path(current_user.id) %></li>
-            <li><i class="fas fa-sign-out-alt"></i><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to posts_path, class: "btn-square-emboss" do %><i class="fas fa-list-alt"></i>投稿一覧<% end %></li>
+            <li><%= link_to pasas_path, class: "btn-square-emboss" do %><i class="fas fa-store-alt"></i>pasa一覧<% end %></li>
+            <li><%= link_to genres_path, class: "btn-square-emboss" do %><i class="fas fa-utensils"></i>ジャンル一覧<% end %></li>
+            <li><%= link_to user_path(current_user.id), class: "btn-square-emboss" do %><i class="fas fa-user-alt"></i>マイページ<% end %></li>
+            <li><%= link_to destroy_user_session_path, method: :delete , class: "btn-square-emboss" do%><i class="fas fa-sign-out-alt"></i>ログアウト<% end %></li>
           </ul>
 
 
         <% else %>
           <ul>
-            <li><i class="fas fa-list-alt"></i><%= link_to "投稿一覧", posts_path %></li>
-            <li><i class="fas fa-store-alt"></i><%= link_to "pasa一覧", pasas_path %></li>
-            <li><i class="fas fa-utensils"></i><%= link_to "ジャンル一覧", genres_path %></li>
-            <li><i class="fas fa-sign-in-alt"></i><%= link_to "ログイン", new_user_session_path %></li>
-            <li><i class="fas fa-user-plus"></i><%= link_to "サインアップ", new_user_registration_path %></li>
+            <li><%= link_to posts_path, class: "btn-square-emboss" do %><i class="fas fa-list-alt"></i>投稿一覧<% end %></li>
+            <li><%= link_to pasas_path, class: "btn-square-emboss" do %><i class="fas fa-store-alt"></i>pasa一覧<% end %></li>
+            <li><%= link_to genres_path, class: "btn-square-emboss" do %><i class="fas fa-utensils"></i>ジャンル一覧<% end %></li>
+            <li><%= link_to new_user_session_path, class: "btn-square-emboss" do %><i class="fas fa-sign-in-alt"></i>ログイン<% end %></li>
+            <li><%= link_to new_user_registration_path, class: "btn-square-emboss" do %><i class="fas fa-user-plus"></i>サインアップ<% end %></li>
           </ul>
         <% end %>
       </div>
