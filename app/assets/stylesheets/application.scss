@@ -42,8 +42,6 @@ header{
   height: 80px;
   background-image: image-url("renga.png");
   background-size: cover;
-  // border-top: 3px solid gray;
-  // border-bottom: 3px solid gray;
   align-items: center;
   line-height: 80px;
 }
@@ -59,7 +57,7 @@ header{
 }
 
 
-.nav-list{
+.pc-nav-list{
   font-size: 20px;
   margin-left: auto;
 
@@ -166,4 +164,91 @@ footer{
   transform: scale(1.1, 1.1);
   color: black;
   text-decoration: none;
+}
+
+.smaho-nav-list{
+  display: none;
+}
+
+@media screen and (max-width: 1100px) {
+  
+  .pc-nav-list{
+    display: none;
+  }  
+    
+  .humburger{
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+    margin: 0 0 0 auto;
+    height: 80px;
+    width: 60px;
+  }
+  
+  .icon span{
+    position: absolute;
+    right: 50px;
+    width: 40px;
+    height: 4px;
+    background-color: black;
+    border-radius: 8px;
+    transition: ease 0.75s;
+  }
+  
+  .icon span:nth-of-type(1){
+    top: 20px;
+  }
+  
+  .icon span:nth-of-type(2){
+    top: 38px;
+  }
+  
+  .icon span:nth-of-type(3){
+    top: 56px;
+  }
+  
+ .close span:nth-of-type(1) {
+    transform: rotate(45deg); /*反時計回りに45度回転*/
+    top: 28px;
+  }
+
+  .close span:nth-of-type(2) {
+    opacity: 0;
+  }
+
+  .close span:nth-of-type(3) {
+      transform: rotate(-45deg); /*時計回りに45度回転*/
+      top: 28px;
+  }
+  
+  .smaho-nav-list{
+    top: 80px;
+    left: 0px; 
+    position: absolute; /*絶対配置　top　leftからの位置を絶対配置する*/
+    z-index: 10;
+    width: 100%;
+    background-color: rgba(34, 49, 52, 0.9);
+    text-align: center;
+  }
+  
+  // ul {
+  //   flex-direction: column;	/*ulのflexboxを縦並びにする*/  
+  // }
+  
+  a {
+    text-align: center;	/*メニューリストの文字を中央寄せ*/
+    border-top: solid 0.5px rgba(255, 255, 255, 0.6);	/*リストの境目に白線 */
+  }
+  
+  .heading{
+    width: 100%;
+  }
+  
+  .new-post-create{
+    margin: 20px;
+  }
+  
+  .search{
+    display: block;
+  }
 }

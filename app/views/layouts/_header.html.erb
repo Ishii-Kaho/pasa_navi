@@ -1,31 +1,63 @@
 <header>
-  <nav>
-    <div class="container">
-      <%= link_to image_tag("logo.png", class:"logo", size: "160x60"), root_path %>
-      <div class="nav-list">
-        <% if user_signed_in? %>
-          <ul>
-            <li><%= link_to posts_path, class: "btn-square-emboss" do %><i class="fas fa-list-alt"></i>投稿一覧<% end %></li>
-            <li><%= link_to pasas_path, class: "btn-square-emboss" do %><i class="fas fa-store-alt"></i>pasa一覧<% end %></li>
-            <li><%= link_to genres_path, class: "btn-square-emboss" do %><i class="fas fa-utensils"></i>ジャンル一覧<% end %></li>
-            <li><%= link_to user_path(current_user.id), class: "btn-square-emboss" do %><i class="fas fa-user-alt"></i>マイページ<% end %></li>
-            <li><%= link_to destroy_user_session_path, method: :delete , class: "btn-square-emboss" do%><i class="fas fa-sign-out-alt"></i>ログアウト<% end %></li>
-          </ul>
-
-
-        <% else %>
-          <ul>
-            <li><%= link_to posts_path, class: "btn-square-emboss" do %><i class="fas fa-list-alt"></i>投稿一覧<% end %></li>
-            <li><%= link_to pasas_path, class: "btn-square-emboss" do %><i class="fas fa-store-alt"></i>pasa一覧<% end %></li>
-            <li><%= link_to genres_path, class: "btn-square-emboss" do %><i class="fas fa-utensils"></i>ジャンル一覧<% end %></li>
-            <li><%= link_to new_user_session_path, class: "btn-square-emboss" do %><i class="fas fa-sign-in-alt"></i>ログイン<% end %></li>
-            <li><%= link_to new_user_registration_path, class: "btn-square-emboss" do %><i class="fas fa-user-plus"></i>サインアップ<% end %></li>
-          </ul>
-        <% end %>
+  <div class="container">
+    <%= link_to image_tag("logo.png", class:"logo", size: "160x60"), root_path %>
+    <nav class="pc-nav-list">
+      <% if user_signed_in? %>
+        <ul>
+          <li><%= link_to posts_path, class: "btn-square-emboss" do %><i class="fas fa-list-alt"></i>投稿一覧<% end %></li>
+          <li><%= link_to pasas_path, class: "btn-square-emboss" do %><i class="fas fa-store-alt"></i>pasa一覧<% end %></li>
+          <li><%= link_to genres_path, class: "btn-square-emboss" do %><i class="fas fa-utensils"></i>ジャンル一覧<% end %></li>
+          <li><%= link_to user_path(current_user.id), class: "btn-square-emboss" do %><i class="fas fa-user-alt"></i>マイページ<% end %></li>
+          <li><%= link_to destroy_user_session_path, method: :delete , class: "btn-square-emboss" do%><i class="fas fa-sign-out-alt"></i>ログアウト<% end %></li>
+        </ul>
+      <% else %>
+        <ul>
+          <li><%= link_to posts_path, class: "btn-square-emboss" do %><i class="fas fa-list-alt"></i>投稿一覧<% end %></li>
+          <li><%= link_to pasas_path, class: "btn-square-emboss" do %><i class="fas fa-store-alt"></i>pasa一覧<% end %></li>
+          <li><%= link_to genres_path, class: "btn-square-emboss" do %><i class="fas fa-utensils"></i>ジャンル一覧<% end %></li>
+          <li><%= link_to new_user_session_path, class: "btn-square-emboss" do %><i class="fas fa-sign-in-alt"></i>ログイン<% end %></li>
+          <li><%= link_to new_user_registration_path, class: "btn-square-emboss" do %><i class="fas fa-user-plus"></i>サインアップ<% end %></li>
+        </ul>
+      <% end %>
+    </nav>
+    
+    <!--レスポンシブハンバーガーメニュー-->
+    <div class="hamburger">
+      <div class="icon">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
-  </nav>
+    <nav class="smaho-nav-list">
+      <% if user_signed_in? %>
+        <ul>
+          <li><%= link_to posts_path, class: "btn-square-emboss" do %><i class="fas fa-list-alt"></i>投稿一覧<% end %></li>
+          <li><%= link_to pasas_path, class: "btn-square-emboss" do %><i class="fas fa-store-alt"></i>pasa一覧<% end %></li>
+          <li><%= link_to genres_path, class: "btn-square-emboss" do %><i class="fas fa-utensils"></i>ジャンル一覧<% end %></li>
+          <li><%= link_to user_path(current_user.id), class: "btn-square-emboss" do %><i class="fas fa-user-alt"></i>マイページ<% end %></li>
+          <li><%= link_to destroy_user_session_path, method: :delete , class: "btn-square-emboss" do%><i class="fas fa-sign-out-alt"></i>ログアウト<% end %></li>
+        </ul>
+      <% else %>
+        <ul>
+          <li><%= link_to posts_path, class: "btn-square-emboss" do %><i class="fas fa-list-alt"></i>投稿一覧<% end %></li>
+          <li><%= link_to pasas_path, class: "btn-square-emboss" do %><i class="fas fa-store-alt"></i>pasa一覧<% end %></li>
+          <li><%= link_to genres_path, class: "btn-square-emboss" do %><i class="fas fa-utensils"></i>ジャンル一覧<% end %></li>
+          <li><%= link_to new_user_session_path, class: "btn-square-emboss" do %><i class="fas fa-sign-in-alt"></i>ログイン<% end %></li>
+          <li><%= link_to new_user_registration_path, class: "btn-square-emboss" do %><i class="fas fa-user-plus"></i>サインアップ<% end %></li>
+        </ul>
+      <% end %>
+    </nav>
+  </div>
 </header>
+
+<!--ハンバーガーメニューのJavaScript-->
+<script>
+  $('.hamburger').on('click', function(){
+      $('.icon').toggleClass('close');
+      $('.smaho-nav-list').slideToggle();
+  });
+</script>
 
 <!--検索機能-->
 <div class="search m-3">

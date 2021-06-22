@@ -118,3 +118,55 @@
   background-size: cover;
   margin: 30px;
 }
+
+@media screen and (max-width: 1100px) {
+  .main-visual-text1{
+    font-size: 30px;
+  }
+  
+  #box{
+    height: 300px;
+    width: 100%;
+  }
+  
+  .pasanavi_about{
+    height: 600px;
+    display: flex;
+    margin: 50px 0 0;
+  }
+  
+  .pasanavi-toha1{
+    font-size: 50px;
+    margin: 30px;
+  }
+  
+  .pasanavi-toha2{
+    font-size: 30px;
+    margin: 30px;
+  }
+  
+  .pasanavi_about-visual{
+    height: 400px;
+    width: 40%;
+    background-image: image-url("pasanavi_toha.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-align: left;
+  }
+  
+  .genres{
+    display: block;
+  }
+  
+  .food-image{
+    margin: auto;
+  }
+  
+  .toilet-image{
+    margin: auto;
+  }
+  
+  .smoking-image{
+    margin: auto;
+  }
+}
