@@ -85,6 +85,7 @@ footer{
   background-size: cover;
   text-align: center;
   line-height: 50px;
+  margin: 50px 0 0;
 }
 
 
@@ -125,6 +126,10 @@ footer{
 // バリデーションエラーでレイアウトが崩れないようにする
 .field_with_errors {
   display: contents;
+}
+
+.errors{
+  color: red;
 }
 
 .new-post-frame{

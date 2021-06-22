@@ -1,17 +1,18 @@
   <%= stylesheet_link_tag 'posts', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= render 'layouts/header' %>
 
-  <h2 class="heading mt-3">新規投稿</h2>
+  <h2 class="heading m-5">新規投稿</h2>
   <% if flash[:alert] %>
     <p class="alert alert-danger"><%= flash[:alert] %></p>
   <% end %>
-
-  <% if @post.errors.any? %>
-    <%= @post.errors.count %>つのエラー:
-    <% @post.errors.full_messages.each do |message| %><br>
-      <%= message %>
+  <div class="errors">
+    <% if @post.errors.any? %>
+      <%= @post.errors.count %>つのエラー:
+      <% @post.errors.full_messages.each do |message| %><br>
+        <%= message %>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 
   <div class="new-post">
 
@@ -24,14 +25,14 @@
 
 
 
-      <div class="post-genre">ジャンル
-          <%= f.label :genre_id %>
+      <div class="post-genre mt-3">
+          <%= f.label :genre_id,'ジャンル' %>
           <%= f.collection_select :genre_id, Genre.all, :id, :name, :prompt => true %>
       </div>
 
       <div class="raty">
         <div class="form-group" id="cleanliness-star">
-          <%= f.label :cleanliness,'清潔度', class:'col-md-3 col-form-label' %>
+          <%= f.label :cleanliness,'清潔度', class:'col-form-label' %>
           <%= f.hidden_field :cleanliness, id: :review_star %>
         </div>
 
@@ -47,7 +48,7 @@
         </script>
 
         <div class="form-group" id="congestion-star">
-          <%= f.label :congestion,'混雑度', class:'col-md-3 col-form-label' %>
+          <%= f.label :congestion,'混雑度', class:'col-form-label' %>
           <%= f.hidden_field :congestion, id: :review_star %>
         </div>
 
@@ -63,7 +64,7 @@
         </script>
 
         <div class="form-group" id="satisfaction-star">
-          <%= f.label :satisfaction,'満足度', class:'col-md-3 col-form-label' %>
+          <%= f.label :satisfaction,'満足度', class:'col-form-label' %>
           <%= f.hidden_field :satisfaction, id: :review_star %>
         </div>
 
@@ -95,7 +96,7 @@
         <%= f.text_area :opinion %>
       </div>
 
-      <div class="visit">来訪日
+      <div class="visit">訪問日
         <div class="form-group">
           <h6 class="visit_time"></h6>
           <%= f.date_field :visit_time %>

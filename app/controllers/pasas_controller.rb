@@ -6,7 +6,6 @@ class PasasController < ApplicationController
   def show
     @pasa = Pasa.find(params[:id])
     @posts = @pasa.posts
-    # @user = @post.user
   end
 
   def autocomplete_facility

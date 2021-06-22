@@ -3,12 +3,14 @@
   <div class="row">
     <h2 class="heading col-md-5 m-3">ユーザー情報変更</h2>
     <div class="col-lg-12 mx-auto">
+      <div class="errors">
         <% if @user.errors.any? %>
           <%= @user.errors.count %>つのエラー:
           <% @user.errors.full_messages.each do |message| %><br>
             <%= message %>
           <% end %>
         <% end %>
+      </div>
 
         <%= form_with model:@user, local:true do |f| %>
 

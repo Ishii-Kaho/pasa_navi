@@ -2,7 +2,7 @@
   <% @post.comments.each do |comment| %>
     <div class="comment-detail">
       <%= comment.comment %><br>
-      <%= comment.user.name %>
+      <%= comment.user.nickname %>
       <%= comment.created_at.strftime('%Y/%m/%d') %>
       <% if comment.user == current_user %>
       <div class="comment-delete">

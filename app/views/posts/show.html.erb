@@ -6,27 +6,27 @@
 
 
 
-  <div class="container">
+  <div class="d-flex align-items-center justify-content-center">
     <div class="row">
-      <div class="col-md-12 mt-5">
+      <div class="show-detail col-md-12 mt-5">
         <div class="favorite-btn">
           <%= render 'favorites/favorite-btn', post: @post %>
         </div>
           <div class="post-detail">
-            <h3 class="post-title">
+            <h2 class="post-title m-3">
               <%= @post.title %>
-            </h3>
+            </h2>
 
             <div class="post-image">
               <%= link_to post_path(@post.id) do %>
-                <%= attachment_image_tag @post, :image, format: 'jpeg', fallback: "no_image.jpg", size:'240x160', class: "image" %>
+                <%= attachment_image_tag @post, :image, format: 'jpeg', fallback: "noimage2.jpg", size:'360x240', class: "image" %>
               <% end %>
             </div>
 
             <div class="post-pasa_name">
               都道府県名：  <%= @pasa.prefecture %><br>
-              高速道路名：  <%= link_to @pasa.facility, pasa_path(@pasa.id) %><br>
-              PA/SA名：  <%= @pasa.highway_name %><br>
+              高速道路名：  <%= @pasa.highway_name %><br>
+              PA/SA名：  <%= link_to @pasa.facility, pasa_path(@pasa.id) %><br>
             </div>
 
             <div class="post-genre_name">
@@ -91,12 +91,10 @@
               訪問日：<%= @post.visit_time.strftime('%Y/%m/%d') %>
               （<%= @post.visit_weekday %>）
             </div>
-            <div class="post-comments">
+            <div class="post-comments mt-5">
               <%= render 'comments/comments', comments: @post.comments %>
             </div>
               <%= render 'comments/comment_form',post: @post,comment: @comment %>
-
-
           </div>
       </div>
     </div>

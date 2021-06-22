@@ -9,9 +9,9 @@ ja:
         cleanliness: 清潔度
         congestion: 混雑度
         satisfaction: 満足度
-        visit_time: 訪問日時
+        visit_time: 訪問日
         title: タイトル
-        opinion: 投稿本文
+        opinion: 投稿内容
         genre: ジャンル
         pasa_id: PA/SA名
       pasa:

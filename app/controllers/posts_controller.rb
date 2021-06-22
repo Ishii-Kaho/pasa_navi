@@ -27,6 +27,7 @@ class PostsController < ApplicationController
     @post = Post.all
     # いいね数順に並び替える
     @posts = Post.includes(:favorited_users).sort { |a, b| b.favorited_users.size <=> a.favorited_users.size }
+    @postspage = Post.page(params[:page]).reverse_order
   end
 
   def show

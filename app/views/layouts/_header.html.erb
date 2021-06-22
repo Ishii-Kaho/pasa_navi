@@ -45,11 +45,11 @@
 </div>
 
 <div class="new-post-frame">
-  <div class="new-post-create">
-    <% if user_signed_in? %>
+  <% if user_signed_in? %>
+    <div class="new-post-create">
       <%= link_to new_post_path, class: "new-post" do %><i class="fas fa-pen-nib"></i>投稿を作成する<% end %>
-    <% else %>
-    <% end %>
-  </div>
+    </div>
+  <% else %>
+  <% end %>
 </div>
 
