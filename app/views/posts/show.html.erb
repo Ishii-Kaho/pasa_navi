@@ -91,6 +91,11 @@
               訪問日：<%= @post.visit_time.strftime('%Y/%m/%d') %>
               （<%= @post.visit_weekday %>）
             </div>
+            <% if @post.user.id == current_user.id %>
+              <%= link_to '投稿を削除', post_path(@post.id), method: :delete, data: { confirm: 'この投稿を本当に消去しますか?' }, class: "btn btn-sm btn-danger mt-5" %>
+            <% else %>
+            <% end %>
+
             <div class="post-comments mt-5">
               <%= render 'comments/comments', comments: @post.comments %>
             </div>
