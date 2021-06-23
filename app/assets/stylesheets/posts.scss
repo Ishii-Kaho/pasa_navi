@@ -33,6 +33,7 @@
   border: 3px solid black;
   margin : 10px;
   padding: 10px;
+  background-color: #f0fff0;
 }
 
 .one-post{
@@ -123,6 +124,13 @@ padding-left: 1%;
 .first , .prev{
   padding-right: 1%;
 }
+
+.post-opinion-detail{
+  border: solid;
+  border-radius: 8px;
+  padding: 30px;
+}
+
 
 @media screen and (max-width: 1100px) {
 

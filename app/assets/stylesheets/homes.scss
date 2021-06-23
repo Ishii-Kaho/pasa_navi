@@ -83,8 +83,9 @@
 
 .pasanavi_about-detail{
   width: 100%;
-  height: 600px;
-  margin: 50px 0 0;
+  // height: 600px;
+  padding: 50px 0 50px;
+  // background-color: #f0fff0;
 }
 
 .genre-title{
@@ -166,6 +167,10 @@
   
   .genres{
     display: block;
+  }
+  
+  .genre-title{
+    text-align: center;
   }
   
   .food-image{

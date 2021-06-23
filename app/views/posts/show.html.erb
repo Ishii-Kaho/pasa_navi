@@ -81,22 +81,29 @@
                 </script>
             </div>
 
-            <div class="post-opinion">
-              <%= @post.opinion %>
+            <div class="post-opinion mt-3">
+              投稿内容<br>
+              <div class="post-opinion-detail">
+                <%= @post.opinion %>
+              </div>
             </div>
-            <div class="nickname">
-              <%= @post.user.nickname %>
+            <div class="nickname mt-3">
+              投稿者：<%= @post.user.nickname %>
             </div>
-            <div class="visit">
+            <div class="visit mt-3">
               訪問日：<%= @post.visit_time.strftime('%Y/%m/%d') %>
               （<%= @post.visit_weekday %>）
             </div>
-            <% if @post.user.id == current_user.id %>
-              <%= link_to '投稿を削除', post_path(@post.id), method: :delete, data: { confirm: 'この投稿を本当に消去しますか?' }, class: "btn btn-sm btn-danger mt-5" %>
+            <% if user_signed_in? %>
+              <% if @post.user.id == current_user.id %>
+                <%= link_to '投稿を削除', post_path(@post.id), method: :delete, data: { confirm: '本当に消去しますか?' }, class: "btn btn-sm btn-danger mt-5" %>
+              <% else %>
+              <% end %>
             <% else %>
             <% end %>
 
             <div class="post-comments mt-5">
+              コメント
               <%= render 'comments/comments', comments: @post.comments %>
             </div>
               <%= render 'comments/comment_form',post: @post,comment: @comment %>
