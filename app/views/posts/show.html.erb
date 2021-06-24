@@ -85,7 +85,7 @@
           <div class="post-opinion mt-3">
             投稿内容<br>
             <div class="post-opinion-detail">
-              <%= @post.opinion %>
+              <%= safe_join(@post.opinion.split("\n"),tag(:br)) %>
             </div>
           </div>
           
