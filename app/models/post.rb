@@ -41,7 +41,6 @@ class Post < ApplicationRecord
   }
 
   validates :pasa_id, presence: true
-  # validates :genre_id, presence: true
   validates :title, presence: true
   validates :opinion, presence: true
   validates :visit_time, presence: true

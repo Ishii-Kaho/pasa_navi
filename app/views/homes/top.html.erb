@@ -26,28 +26,31 @@
       評価やおすすめを共有するSNSです
     </p>
   </div>
-  <div class="pasanavi_about-visual">
-  </div>
+  <div class="pasanavi_about-visual"></div>
 </div>
 
 <div class="pasanavi_about-detail">
   <div class="genre-title">
     <p>ジャンルから投稿を見る</p>
   </div>
+  
   <div class="genres">
     <div class="food">
       <div class="genre-text"><i class="fas fa-utensils"></i><%= link_to "グルメ", gourmet_path %></div>
       <div class="food-image"></div>
     </div>
+    
     <div class="toilet">
       <div class="genre-text"><i class="fas fa-toilet"></i><%= link_to "トイレ", toilet_path %></div>
       <div class="toilet-image"></div>
     </div>
+    
     <div class="smoking">
       <div class="genre-text"><i class="fas fa-smoking"></i><%= link_to "喫煙所", smoking_path %></div>
       <div class="smoking-image"></div>
     </div>
   </div>
+  
 </div>
 
 <%= render 'layouts/footer' %>

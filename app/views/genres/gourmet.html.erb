@@ -1,16 +1,17 @@
 <%= render 'layouts/header' %>
 
 <h2 class="heading col-md-4 mt-3">ジャンル：グルメ</h2>
+
 <div class="row">
   <% @posts.each do |post| %>
-     <div class="posts col-md-3">
+    <div class="posts col-md-3">
       <div class="one-post">
         <%= link_to post_path(post.id) do %>
           <h3 class="title">
             <%= post.title %>
           </h3>
           <div class="image">
-            <%= attachment_image_tag post, :image, format: 'jpeg', fallback: "no_image.jpg", size:'240x160', class: "image" %>
+            <%= attachment_image_tag post, :image, format: 'jpeg', fallback: "noimage2.jpg", size:'240x160', class: "image" %>
           </div>
           <div class="name-favorite">
             <%= post.user.nickname %>/
@@ -20,6 +21,7 @@
       </div>
     </div>
   <% end %>
-  </div>
+</div>
+  
   <%= paginate @posts %>
   <%= render 'layouts/footer' %>

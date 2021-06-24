@@ -1,32 +1,32 @@
-  <%= stylesheet_link_tag 'pasas', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= render 'layouts/header' %>
+<%= stylesheet_link_tag 'pasas', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= render 'layouts/header' %>
 
-      <h2 class="heading col-md-3 m-3">PA/SA一覧</h2>
-      <div class="col-md-12 m-5">
+<h2 class="heading col-md-3 m-3">PA/SA一覧</h2>
+<div class="col-md-12 m-3">
+  <table class="table table-striped">
+    
+    <thead>
+      <tr>
+        <th>PA/SA名</th>
+        <th>都道府県名</th>
+        <th>高速道路名</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <% @pasas.each do |pasa| %>
+        <tr>
+          <td>
+            <%= link_to pasa.facility, pasa_path(pasa.id) %>
+          </td>
+          <td><%= pasa.prefecture %></td>
+          <td><%= pasa.highway_name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+    
+  </table>
+</div>
+<%= paginate @pasas %>
 
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>PA/SA名</th>
-            <th>都道府県名</th>
-            <th>高速道路名</th>
-            <th colspan="3"></th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <% @pasas.each do |pasa| %>
-            <tr>
-              <td>
-                <%= link_to pasa.facility, pasa_path(pasa.id) %>
-              </td>
-              <td><%= pasa.prefecture %></td>
-              <td><%= pasa.highway_name %></td>
-              <td></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-  <%= paginate @pasas %>
-
-  <%= render 'layouts/footer' %>
+<%= render 'layouts/footer' %>

@@ -9,105 +9,110 @@
   <div class="d-flex align-items-center justify-content-center">
     <div class="row">
       <div class="show-detail col-md-12 mt-5">
+        
         <div class="favorite-btn">
           <%= render 'favorites/favorite-btn', post: @post %>
         </div>
-          <div class="post-detail">
-            <h2 class="post-title m-3">
-              <%= @post.title %>
-            </h2>
+        <div class="post-detail">
+          <h2 class="post-title m-3">
+            <%= @post.title %>
+          </h2>
 
-            <div class="post-image">
-              <%= link_to post_path(@post.id) do %>
-                <%= attachment_image_tag @post, :image, format: 'jpeg', fallback: "noimage2.jpg", size:'360x240', class: "image" %>
-              <% end %>
-            </div>
+          <div class="post-image">
+            <%= link_to post_path(@post.id) do %>
+              <%= attachment_image_tag @post, :image, format: 'jpeg', fallback: "noimage2.jpg", size:'360x240', class: "image" %>
+            <% end %>
+          </div>
 
-            <div class="post-pasa_name">
-              都道府県名：  <%= @pasa.prefecture %><br>
-              高速道路名：  <%= @pasa.highway_name %><br>
-              PA/SA名：  <%= link_to @pasa.facility, pasa_path(@pasa.id) %><br>
-            </div>
+          <div class="post-pasa_name">
+            都道府県名：  <%= @pasa.prefecture %><br>
+            高速道路名：  <%= @pasa.highway_name %><br>
+            PA/SA名：  <%= link_to @pasa.facility, pasa_path(@pasa.id) %><br>
+          </div>
 
-            <div class="post-genre_name">
-              ジャンル：  <%= @genre.name %>
-            </div>
+          <div class="post-genre_name">
+            ジャンル：  <%= @genre.name %>
+          </div>
 
-            <!--清潔度 評価星の表示-->
-            <div class="rate-cleanliness">清潔度
-              <div id="star-rate-cleanliness<%= @post.id %>"></div>
-                <script>
-                $('#star-rate-cleanliness<%= @post.id %>').raty({
-                  size: 36,
-                  starOff:  '<%= asset_path('star-off.png') %>',
-                  starOn : '<%= asset_path('star-on.png') %>',
-                  starHalf: '<%= asset_path('star-half.png') %>',
-                  half: true,
-                  readOnly: true,
-                  score: <%= @post.cleanliness %>,
-                });
-                </script>
-            </div>
+          <!--清潔度 評価星の表示-->
+          <div class="rate-cleanliness">清潔度
+            <div id="star-rate-cleanliness<%= @post.id %>"></div>
+              <script>
+              $('#star-rate-cleanliness<%= @post.id %>').raty({
+                size: 36,
+                starOff:  '<%= asset_path('star-off.png') %>',
+                starOn : '<%= asset_path('star-on.png') %>',
+                starHalf: '<%= asset_path('star-half.png') %>',
+                half: true,
+                readOnly: true,
+                score: <%= @post.cleanliness %>,
+              });
+              </script>
+          </div>
 
-            <!--混雑度 評価星の表示-->
-            <div class="rate-congestion">混雑度
-              <div id="star-rate-congestion<%= @post.id %>"></div>
-                <script>
-                $('#star-rate-congestion<%= @post.id %>').raty({
-                  size: 36,
-                  starOff:  '<%= asset_path('star-off.png') %>',
-                  starOn : '<%= asset_path('star-on.png') %>',
-                  starHalf: '<%= asset_path('star-half.png') %>',
-                  half: true,
-                  readOnly: true,
-                  score: <%= @post.congestion %>,
-                });
-                </script>
-            </div>
+          <!--混雑度 評価星の表示-->
+          <div class="rate-congestion">混雑度
+            <div id="star-rate-congestion<%= @post.id %>"></div>
+              <script>
+              $('#star-rate-congestion<%= @post.id %>').raty({
+                size: 36,
+                starOff:  '<%= asset_path('star-off.png') %>',
+                starOn : '<%= asset_path('star-on.png') %>',
+                starHalf: '<%= asset_path('star-half.png') %>',
+                half: true,
+                readOnly: true,
+                score: <%= @post.congestion %>,
+              });
+              </script>
+          </div>
 
-            <!--満足度 評価星の表示-->
-            <div class="rate-satisfaction">満足度
-              <div id="star-rate-satisfaction<%= @post.id %>"></div>
-                <script>
-                $('#star-rate-satisfaction<%= @post.id %>').raty({
-                  size: 36,
-                  starOff:  '<%= asset_path('star-off.png') %>',
-                  starOn : '<%= asset_path('star-on.png') %>',
-                  starHalf: '<%= asset_path('star-half.png') %>',
-                  half: true,
-                  readOnly: true,
-                  score: <%= @post.satisfaction %>,
-                });
-                </script>
-            </div>
+          <!--満足度 評価星の表示-->
+          <div class="rate-satisfaction">満足度
+            <div id="star-rate-satisfaction<%= @post.id %>"></div>
+              <script>
+              $('#star-rate-satisfaction<%= @post.id %>').raty({
+                size: 36,
+                starOff:  '<%= asset_path('star-off.png') %>',
+                starOn : '<%= asset_path('star-on.png') %>',
+                starHalf: '<%= asset_path('star-half.png') %>',
+                half: true,
+                readOnly: true,
+                score: <%= @post.satisfaction %>,
+              });
+              </script>
+          </div>
 
-            <div class="post-opinion mt-3">
-              投稿内容<br>
-              <div class="post-opinion-detail">
-                <%= @post.opinion %>
-              </div>
+          <div class="post-opinion mt-3">
+            投稿内容<br>
+            <div class="post-opinion-detail">
+              <%= @post.opinion %>
             </div>
-            <div class="nickname mt-3">
-              投稿者：<%= @post.user.nickname %>
-            </div>
-            <div class="visit mt-3">
-              訪問日：<%= @post.visit_time.strftime('%Y/%m/%d') %>
-              （<%= @post.visit_weekday %>）
-            </div>
-            <% if user_signed_in? %>
-              <% if @post.user.id == current_user.id %>
-                <%= link_to '投稿を削除', post_path(@post.id), method: :delete, data: { confirm: '本当に消去しますか?' }, class: "btn btn-sm btn-danger mt-5" %>
-              <% else %>
-              <% end %>
+          </div>
+          
+          <div class="nickname mt-3">
+            投稿者：<%= @post.user.nickname %>
+          </div>
+          
+          <div class="visit mt-3">
+            訪問日：<%= @post.visit_time.strftime('%Y/%m/%d') %>
+            （<%= @post.visit_weekday %>）
+          </div>
+          
+          <% if user_signed_in? %>
+            <% if @post.user.id == current_user.id %>
+              <%= link_to '投稿を削除', post_path(@post.id), method: :delete, data: { confirm: '本当に消去しますか?' }, class: "btn btn-sm btn-danger mt-5" %>
             <% else %>
             <% end %>
+          <% else %>
+          <% end %>
 
-            <div class="post-comments mt-5">
-              コメント
-              <%= render 'comments/comments', comments: @post.comments %>
-            </div>
-              <%= render 'comments/comment_form',post: @post,comment: @comment %>
+          <div class="post-comments mt-5">
+            コメント
+            <%= render 'comments/comments', comments: @post.comments %>
+            <%= render 'comments/comment_form',post: @post,comment: @comment %>
           </div>
+        </div>
+        
       </div>
     </div>
   </div>

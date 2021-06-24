@@ -6,20 +6,24 @@
     <div class="posts col-md-3">
       <div class="one-post">
         <%= link_to post_path(post.id) do %>
+        
           <h3 class="title">
             <%= post.title %>
           </h3>
+          
           <div class="image">
-            <%= attachment_image_tag post, :image, format: 'jpeg', fallback: "no_image.jpg", size:'240x160', class: "image" %>
+            <%= attachment_image_tag post, :image, format: 'jpeg', fallback: "noimage2.jpg", size:'240x160', class: "image" %>
           </div>
+          
           <div class="name-favorite">
             <%= post.user.nickname %>/
             ♥<%= post.favorites.count %> いいね
           </div>
+          
         <% end %>
       </div>
     </div>
   <% end %>
 </div>
-<%#= paginate @posts %>
+<%= paginate @posts %>
 <%= render 'layouts/footer' %>

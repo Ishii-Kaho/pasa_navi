@@ -5,6 +5,7 @@
   <% if flash[:alert] %>
     <p class="alert alert-danger"><%= flash[:alert] %></p>
   <% end %>
+  
   <div class="errors">
     <% if @post.errors.any? %>
       <%= @post.errors.count %>つのエラー:
@@ -17,14 +18,8 @@
   <div class="new-post">
 
     <%= form_with model:@post, local:true do |f| %>
-    <%= render 'posts/new-facility' %>
-      <!--<div class="post-pasa">PA/SA名-->
-      <!--    <%#= f.label :pasa_id %>-->
-      <!--    <%#= f.collection_select :pasa_id, Pasa.all, :id, :facility, :prompt => true %>-->
-      <!--</div>-->
-
-
-
+      <%= render 'posts/new-facility' %>
+      
       <div class="post-genre mt-3">
           <%= f.label :genre_id,'ジャンル' %>
           <%= f.collection_select :genre_id, Genre.all, :id, :name, :prompt => true %>
