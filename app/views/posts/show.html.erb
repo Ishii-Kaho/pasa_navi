@@ -4,7 +4,9 @@
 <script src="/js/jquery.raty.js"></script>
 <%= render 'layouts/header' %>
 
-<p id="notice"><%= notice %></p>
+<% if notice %>
+　　<p id="notice"><%= notice %></p>
+<% end %>
 
   <div class="d-flex align-items-center justify-content-center">
     <div class="row">

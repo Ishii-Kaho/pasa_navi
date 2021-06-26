@@ -175,7 +175,10 @@ footer{
   background-color: #fff8dc;
   text-align: center;
   font-size: 20px;
+  padding: 20px 0;
 }
+
+
 @media screen and (max-width: 1100px){
   
   .pc-nav-list{
@@ -247,7 +250,7 @@ footer{
   }
   
   .heading{
-    width: 100%;
+    width: 70%;
   }
   
   .new-post-create{

@@ -1,7 +1,10 @@
 <%= stylesheet_link_tag 'homes', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= render 'layouts/header' %>
 
-<p id="notice"><%= notice %></p>
+<% if notice %>
+　　<p id="notice"><%= notice %></p>
+<% end %>
+
 
 <div class="main-visual mt-5">
   <div class="main-visual-text">
