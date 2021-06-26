@@ -16,6 +16,7 @@ class PostsController < ApplicationController
       @post.pasa_id = pasa.id
       @post.user_id = current_user.id
       if @post.save
+        flash[:notice] = "投稿しました"
         redirect_to post_path(@post)
       else
         render :new
