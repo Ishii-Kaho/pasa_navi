@@ -3,7 +3,7 @@
 ## サイト概要
 全国のパーキングエリア・サービスエリア（以下PA/SA）の情報を共有するSNSサイト。
 PA/SAの清潔度や混雑度の評価、食べ物やトイレ、喫煙所などレビューが可能。
-投稿から自分に合ったPA/SAを探すことができる。
+投稿から自分に合ったPA/SAを探すことやSA/PAのおすすめのグルメなどを知ることができる。
 
 ### サイトテーマ
 ユーザーにぴったりなPA/SAを見つけることができる。
@@ -53,3 +53,5 @@ https://docs.google.com/spreadsheets/d/1yhtVm4WZ75Ok3VhHoOTwHmUShDxm48FJjPhp-UXp
 　　https://www.ac-illust.com
 - Bg-patterns
 　　http://bg-patterns.com
+- Loose Drawing
+　　https://loosedrawing.com
