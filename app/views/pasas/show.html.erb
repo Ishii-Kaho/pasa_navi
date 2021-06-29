@@ -21,6 +21,10 @@
                 ♥<%= post.favorites.count %> いいね
               </div>
               
+              <div class="post-jenre">
+                ジャンル：<%= post.genre.name %>
+              </div>
+              
               <div class="created_at">
                 投稿日：<%= post.created_at.strftime('%Y/%m/%d') %>
               </div>
