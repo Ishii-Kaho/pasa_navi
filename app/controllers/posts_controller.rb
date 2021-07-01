@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def new
     @post = Post.new
-    @pasas = Pasa.all
+    # @pasas = Pasa.all
   end
 
   def create
@@ -9,7 +9,7 @@ class PostsController < ApplicationController
     pasa = Pasa.find_by(facility: params[:facility])
     # DBにあるPASA名以外の入力不可にする
     if pasa.nil?
-      @pasas = Pasa.all
+      # @pasas = Pasa.all
       flash[:alert] = '正しいPA/SA名を入力して下さい'
       render :new
     else
