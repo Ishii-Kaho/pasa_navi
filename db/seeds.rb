@@ -33,7 +33,7 @@ require 'csv'
 CSV.foreach('db/pasa.csv', headers: true) do |row|
   Pasa.create(
     facility: row['facility'],
-    prefecture: row['prefecture'],
-    highway_name: row['highway_name']
+    prefecture: row['prefecture'].to_i,
+    highway_name: row['highway_name'].to_i
   )
 end
