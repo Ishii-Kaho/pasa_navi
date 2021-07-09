@@ -14,13 +14,13 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update(user_params)
-      flash[:notice] = 'You have updated user successfully.'
+      flash[:notice] = 'ユーザー情報を更新しました。.'
       redirect_to user_path(current_user.id)
     else
       render action: :edit
     end
   end
-  
+
   def destroy
     @user = current_user
     @user.destroy
