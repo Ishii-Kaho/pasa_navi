@@ -92,7 +92,8 @@
           </div>
           
           <div class="nickname mt-3">
-            投稿者：<%= @post.user.nickname %>
+            投稿者：<%= attachment_image_tag @post.user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size:'40x40' %>
+            <%= @post.user.nickname %>
           </div>
           
           <div class="visit mt-3">
