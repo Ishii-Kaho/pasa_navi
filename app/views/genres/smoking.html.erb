@@ -16,10 +16,14 @@
           </div>
           
           <div class="name-favorite">
+            <%= attachment_image_tag post.user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size:'40x40', class: "profileimage-circle" %>
             <%= post.user.nickname %>/
             ♥<%= post.favorites.count %> いいね
           </div>
           
+          <div class="created_at">
+              投稿日：<%= post.created_at.strftime('%Y/%m/%d') %>
+          </div>
         <% end %>
       </div>
     </div>
