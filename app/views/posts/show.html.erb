@@ -11,7 +11,7 @@
   <div class="d-flex align-items-center justify-content-center">
     <div class="row">
       <div class="show-detail col-md-12 mt-5">
-        
+
         <div class="favorite-btn">
           <%= render 'favorites/favorite-btn', post: @post %>
         </div>
@@ -90,17 +90,17 @@
               <%= safe_join(@post.opinion.split("\n"),tag(:br)) %>
             </div>
           </div>
-          
+
           <div class="nickname mt-3">
             投稿者：<%= attachment_image_tag @post.user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size:'40x40', class: "profileimage-circle" %>
             <%= @post.user.nickname %>
           </div>
-          
+
           <div class="visit mt-3">
             訪問日：<%= @post.visit_time.strftime('%Y/%m/%d') %>
             （<%= @post.visit_weekday %>）
           </div>
-          
+
           <% if user_signed_in? %>
             <% if @post.user.id == current_user.id %>
               <%= link_to '投稿を削除', post_path(@post.id), method: :delete, data: { confirm: '本当に消去しますか?' }, class: "btn btn-sm btn-danger mt-5" %>
@@ -115,7 +115,7 @@
           </div>
             <%= render 'comments/comment_form',post: @post,comment: @comment %>
         </div>
-        
+
       </div>
     </div>
   </div>
