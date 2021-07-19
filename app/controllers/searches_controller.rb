@@ -5,7 +5,7 @@ class SearchesController < ApplicationController
     word = params[:word]
     @word = params[:word]
 
-    if @range == '1'
+    if @range == 'pasa'
       @pasa = Pasa.search(search, word)
     else
       @post = Post.search(search, word)
